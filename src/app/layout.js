@@ -1,12 +1,17 @@
+import "./globals.css";
+import Footer from "@/components/Footer";
+import Nav from "@/components/Nav";
 
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Nav/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
