@@ -101,3 +101,18 @@ body {
 .animate-content-rise {
   animation: contentRise 0.8s ease-out forwards;
 }
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-continuous {
+  animation: rotate360 10s linear infinite;
+}
+
+
