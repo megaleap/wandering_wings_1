@@ -27,7 +27,6 @@ export default function AboutFarm() {
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
           {/* Images */}
           <div className="relative h-[500px] md:h-[600px]">
             <div className="absolute top-0 left-0 w-[70%] h-[80%] rounded-2xl overflow-hidden shadow-xl z-10">
@@ -54,7 +53,6 @@ export default function AboutFarm() {
 
           {/* Content */}
           <div className="space-y-6">
-
             {/* Header */}
             <div
               className={`space-y-3 transition-opacity ${
@@ -64,9 +62,25 @@ export default function AboutFarm() {
               <p className="text-sm uppercase tracking-wider text-[#39251A]">
                 About Our Farm
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#39251A]">
-                From Our Open, Natural Farms to Homes Across India
-              </h2>
+              <div className="flex">
+                <div>
+                   <h2 className="text-3xl md:text-4xl font-bold text-[#39251A]">
+                  From Our Open, Natural Farms to Homes Across India
+                </h2>
+                </div>
+               
+                {/* Rotating Banner */}
+                <div className="relative flex justify-end">
+                  <div className="rotate-360 relative w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center ">
+                    <Image
+                      src="/assets/Abour us.png" // replace later
+                      alt="Rotating Banner"
+                      fill
+                      className="object-contain p-3"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Mission */}
@@ -82,7 +96,7 @@ export default function AboutFarm() {
               {[
                 "Give hens the freedom they deserve in a calm, open environment.",
                 "Offer clean, antibiotic-free eggs families can trust.",
-                "Farm responsibly and sustainably."
+                "Farm responsibly and sustainably.",
               ].map((text, index) => (
                 <div key={index} className="flex gap-3">
                   <span className="w-6 h-6 bg-yellow-400 rounded flex-shrink-0 mt-1" />
@@ -117,15 +131,15 @@ export default function AboutFarm() {
                 ["20k+", "Eggs / week"],
                 ["5000+", "Happy customers"],
                 ["100+", "Locations"],
-                ["100+", "Happy farmers"]
+                ["100+", "Happy farmers"],
               ].map(([value, label]) => (
-               <div
-  key={label}
-  className="group relative overflow-hidden bg-[#39251A] text-white rounded-2xl py-8 text-center transition-colors duration-500"
->
-  {/* Hover wave */}
-  <div
-    className="
+                <div
+                  key={label}
+                  className="group relative overflow-hidden bg-[#39251A] text-white rounded-2xl py-8 text-center transition-colors duration-500"
+                >
+                  {/* Hover wave */}
+                  <div
+                    className="
       absolute inset-0
       bg-yellow-400
       translate-y-full
@@ -134,15 +148,14 @@ export default function AboutFarm() {
       group-hover:translate-y-0
       group-hover:rounded-2xl
     "
-  />
+                  />
 
-  {/* Content */}
-  <div className="relative z-10 group-hover:text-[#39251A] transition-colors duration-500">
-    <p className="text-2xl font-bold">{value}</p>
-    <p className="text-xs mt-1">{label}</p>
-  </div>
-</div>
-
+                  {/* Content */}
+                  <div className="relative z-10 group-hover:text-[#39251A] transition-colors duration-500">
+                    <p className="text-2xl font-bold">{value}</p>
+                    <p className="text-xs mt-1">{label}</p>
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -156,7 +169,6 @@ export default function AboutFarm() {
                 Learn More About Us →
               </button>
             </div>
-
           </div>
         </div>
       </div>

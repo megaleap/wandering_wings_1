@@ -40,18 +40,18 @@ const Herosection = () => {
 
       {/* Video Background */}
       <video
-        ref={videoRef}
-        className="absolute top-0 left-0 mb-30 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        onError={(e) => console.error('Video error:', e)}
-      >
-        <source src="/videos/chicken-farm.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+  ref={videoRef}
+  className="absolute inset-0 w-full h-full object-cover z-0"
+  autoPlay
+  loop
+  muted
+  playsInline
+>
+  <source src="/videos/chicken-farm.mp4" type="video/mp4" />
+</video>
+
+     <div className="absolute inset-0 bg-[#3b2518]/85 z-10 pointer-events-none" />
+
       {/* Overlay for better text readability */}
       {/* <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10"></div> */}
 
@@ -67,12 +67,11 @@ const Herosection = () => {
           <div className="flex items-start gap-4 md:gap-6">
             <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 md:mb-8 max-w-4xl">
               Premium Pasture-Raised Eggs for Every Plate that Demands Quality.
+              <span className="text-3xl md:text-4xl lg:text-4xl">🐔</span>
             </h1>
 
             {/* Chicken Icon */}
-            <div className="flex-shrink-0 mt-2 md:mt-4">
-              <span className="text-6xl md:text-7xl lg:text-8xl">🐔</span>
-            </div>
+           
           </div>
 
           {/* Description */}
@@ -133,21 +132,12 @@ const Herosection = () => {
           </div>
 
           {/* Decorative Badge (Top Right) */}
-          <div className="absolute top-20 right-6 md:right-12 lg:right-20">
-            <div className="relative">
-              {/* Egg Carton Image */}
-              <img
-                src="/egg-carton.png"
-                alt="Premium Eggs"
-                className="w-12 h-12 lg:w-24 lg:h-24 object-contain"
-              />
-            </div>
-          </div>
+         
         </div>
 
         {/* Rotating Badge with Eggs */}
         <div className="flex">
-          <div className="absolute top-1/2 right-30">
+          <div className="absolute top-1/2 right-30 z-30">
             <div className="relative">
               {/* Egg Carton Image - base layer */}
               <Image

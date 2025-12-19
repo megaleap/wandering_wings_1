@@ -2,13 +2,17 @@
 import Image from 'next/image'
 import React from 'react'
 import { FiPackage, FiCheckCircle } from 'react-icons/fi' // Example icons
+import customer1 from '../app/assets/Ellipse 754.png'
+import customer2 from '../app/assets/Ellipse 744.png'
+import customer3 from '../app/assets/Ellipse 746.png'
+import customer4 from '../app/assets/Ellipse 747.png'
 
 const OurBenefits = () => {
   return (
     <section className="bg-[#3E2C20] py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-20">
         {/* Left Column */}
- (
+ 
     <div className="flex flex-col md:flex-row gap-10 md:w-1/2">
       
       {/* LEFT SIDE */}
@@ -34,10 +38,10 @@ const OurBenefits = () => {
           </p>
 
           <div className="flex -space-x-3">
-            <img src="/client1.jpg" className="w-10 h-10 rounded-full border-2 border-white" />
-            <img src="/client2.jpg" className="w-10 h-10 rounded-full border-2 border-white" />
-            <img src="/client3.jpg" className="w-10 h-10 rounded-full border-2 border-white" />
-            <img src="/client4.jpg" className="w-10 h-10 rounded-full border-2 border-white" />
+            <Image src={customer1} className="w-10 h-10 rounded-full border-2 border-white" />
+            <Image src={customer2} className="w-10 h-10 rounded-full border-2 border-white" />
+            <Image src={customer4} className="w-10 h-10 rounded-full border-2 border-white" />
+            <Image src={customer3} className="w-10 h-10 rounded-full border-2 border-white" />
           </div>
         </div>
       </div>
