@@ -10,6 +10,7 @@ import WanderingKitchen from '@/components/WanderingKitchen'
 
 // import AboutFarm from './about/page'
 import AboutFarm from  "../app/about/page";
+import OurEggs from '@/components/OurEggs'
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
       <Herosection />
       <Banner />
       <AboutFarm />
+      <OurEggs/>
       <Testimonials />
       <FarmGallery />
       <FAQs />
