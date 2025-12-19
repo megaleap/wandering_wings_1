@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import eggs from "../app/assets/Ellipse 743.png";
 import learn from "../app/assets/Learm more.png";
 import customer1 from '../app/assets/Ellipse 754.png'
@@ -11,6 +11,40 @@ import customer4 from '../app/assets/Ellipse 747.png'
 import Image from "next/image";
 
 const Herosection = () => {
+  const [typedText, setTypedText] = useState("");
+
+
+  const fullText =
+  "Premium Pasture-Raised Eggs for Every Plate that Demands Quality.";
+
+useEffect(() => {
+  let observer;
+
+  const startTyping = () => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setTypedText((prev) => prev + fullText[i]);
+      i++;
+      if (i === fullText.length) clearInterval(interval);
+    }, 35);
+  };
+
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        startTyping();
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  const target = document.getElementById("hero-heading");
+  if (target) observer.observe(target);
+
+  return () => observer?.disconnect();
+}, []);
+
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -65,14 +99,15 @@ const Herosection = () => {
 
           {/* Main Heading */}
           <div className="flex items-start gap-4 md:gap-6">
-            <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 md:mb-8 max-w-4xl">
-              Premium Pasture-Raised Eggs for Every Plate that Demands Quality.
-              <span className="text-3xl md:text-4xl lg:text-4xl">🐔</span>
-            </h1>
-
-            {/* Chicken Icon */}
-           
-          </div>
+  <h1
+    id="hero-heading"
+    className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 md:mb-8 max-w-4xl"
+  >
+    {typedText}
+    <span className="typing-cursor" />
+    <span className="ml-2 text-3xl md:text-4xl lg:text-4xl">🐔</span>
+  </h1>
+</div>
 
           {/* Description */}
           <div className="text-white text-base md:text-lg lg:text-xl mb-8 md:mb-10 max-w-3xl space-y-2">
