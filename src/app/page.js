@@ -13,6 +13,9 @@ import AboutFarm from  "../app/about/page";
 import OurEggs from '@/components/OurEggs'
 import Whychooseoureggs from '@/components/Whychooseoureggs'
 import OurBenefits from '@/components/Ourbenifits'
+import { Egg } from 'lucide-react'
+import EggPacks from '@/components/EggPacks'
+import WhyChoose from '@/components/WhyChoose'
 
 const page = () => {
   return (
@@ -23,6 +26,8 @@ const page = () => {
       <OurEggs/>
       <Whychooseoureggs/>
       <OurBenefits/>
+      <WhyChoose/>
+      <EggPacks />
       <Testimonials />
       <FarmGallery />
       <FAQs />

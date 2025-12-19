@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import { Eye } from "lucide-react";
+import { ArrowRight, Eye } from "lucide-react";
+import { motion } from "framer-motion";
 
 import img1 from "@/app/assets/gallery/1.png";
 import img2 from "@/app/assets/gallery/2.jpeg";
@@ -26,7 +27,14 @@ export default function FarmGallery() {
         {/* Gallery */}
         <div className="flex flex-wrap justify-center gap-10 mb-12">
           {galleryImages.map((img, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-120px" }}
+              transition={{
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               key={index}
               className="relative group w-[200px] h-[300px] sm:w-[220px] sm:h-[320px]"
             >
@@ -53,17 +61,26 @@ export default function FarmGallery() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* View All Button */}
-        <button className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 transition text-black font-semibold px-6 py-3 rounded-xl">
+        <motion.button
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-120px" }}
+          transition={{
+            duration: 0.6,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 transition text-black font-semibold px-6 py-3 rounded-xl"
+        >
           View All
-          <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white">
-            →
+          <span className="w-7 h-7 rounded bg-white flex items-center justify-center">
+            <ArrowRight size={16} className="text-black" />
           </span>
-        </button>
+        </motion.button>
       </div>
     </section>
   );

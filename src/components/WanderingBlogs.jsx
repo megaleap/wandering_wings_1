@@ -6,6 +6,8 @@ import blog1 from "../app/assets/blogs/image1.png";
 import blog2 from "../app/assets/blogs/image2.png";
 // import blog3 from "../app/assets/blogs/image3.png";
 import blog3 from "../app/assets/blogs/image5.jpeg";
+import { motion } from "framer-motion";
+import { ArrowBigRight, ArrowRight } from "lucide-react";
 
 const blogs = [
   {
@@ -35,41 +37,50 @@ export default function WanderingBlogs() {
             <p className="text-sm font-semibold tracking-widest text-[#6b4b32] mb-2 flex items-center gap-2">
               <span className="text-[#FED525]">✦</span> OUR BLOGS
             </p>
-            <h2 className="text-[32px] md:text-[40px] font-serif text-[#3A2417] leading-tight">
+            <h2 className="text-[32px] md:text-[40px] font-serif text-[#3A2417] leading-tight font-extrabold">
               From Our Wandering <br /> Blogs
             </h2>
           </div>
 
-          <button className="self-start md:self-auto bg-[#FFD21F] text-[#3A2417] font-semibold px-6 py-3 rounded-full flex items-center gap-2 hover:opacity-90 transition">
+          <button className="self-start md:self-auto bg-[#FFD21F] text-[#3A2417] font-semibold px-6 py-3 rounded flex items-center gap-2 hover:opacity-90 transition">
             View All Blogs
-            <span className="text-lg">→</span>
+            <span className="w-7 h-7 rounded bg-white flex items-center justify-center">
+              <ArrowRight size={16} className="text-black" />
+            </span>
           </button>
         </div>
 
         {/* Blog Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-120px" }}
+              transition={{
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               key={index}
               className="bg-[#FFF6DF] rounded-[18px] border border-[#E8DCC6] overflow-hidden hover:shadow-lg transition"
             >
-             <div className="relative h-[220px] w-full overflow-hidden group">
-  {/* Image */}
-  <Image
-    src={blog.image}
-    alt="Blog Image"
-    fill
-    className="
+              <div className="relative h-[220px] w-full overflow-hidden group">
+                {/* Image */}
+                <Image
+                  src={blog.image}
+                  alt="Blog Image"
+                  fill
+                  className="
       object-cover
       rounded-t-[18px]
       transition-transform duration-700 ease-out
       group-hover:scale-110
     "
-  />
+                />
 
-  {/* Diagonal White Overlay */}
-  <span
-    className="
+                {/* Diagonal White Overlay */}
+                <span
+                  className="
       absolute
       inset-0
       bg-white/40
@@ -79,9 +90,8 @@ export default function WanderingBlogs() {
       transition-transform duration-700 ease-out
       group-hover:scale-150
     "
-  />
-</div>
-
+                />
+              </div>
 
               <div className="p-5">
                 <p className="text-[#3A2417] text-[15px] leading-relaxed mb-4 font-semibold">
@@ -92,7 +102,7 @@ export default function WanderingBlogs() {
                   Read More <span>→</span>
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

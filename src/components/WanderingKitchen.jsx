@@ -18,6 +18,8 @@ import image13 from "../app/assets/kitchen/13.jpg";
 import image14 from "../app/assets/kitchen/14.jpg";
 import image15 from "../app/assets/kitchen/15.png";
 import image16 from "../app/assets/kitchen/16.png";
+import { motion } from "framer-motion";
+
 
 const recipes = [
   { title: "The Perfect start to your day", image: image2 },
@@ -44,11 +46,11 @@ export default function WanderingKitchen() {
       <div className="max-w-[1200px] mx-auto px-5">
 
         {/* Heading (RESTORED STYLE) */}
-        <h2 className="text-center  text-[32px] text-[#322119] leading-tight mb-1">
+        <h2 className="text-center  text-[32px] text-[#322119] leading-tight mb-1 font-extrabold">
           The Wandering Kitchen
         </h2>
 
-        <p className="text-center text-[22px] text-[#5A4228] mb-2">
+        <p className="text-center text-[22px] text-[#5A4228] mb-2 font-semibold">
           Delicious recipes made with real free-range eggs
         </p>
 

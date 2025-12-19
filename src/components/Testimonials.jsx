@@ -1,132 +1,184 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-// import image1 from "../app/assets/testimonials/1.png";
-// import image2 from "../app/assets/testimonials/1.png";
-// import image3 from "../app/assets/testimonials/1.png";
-import image1 from "../../public/testimonials/1.png";
-import image2 from "../../public/testimonials/1.png";
-import image3 from "../../public/testimonials/1.png";
+import hens from "../app/assets/hens1.jpg";
+import test1 from "../app/assets/Ellipse 744.png";
+import test2 from "../app/assets/Ellipse 746.png";
+import test3 from "../app/assets/Ellipse 747.png";
 
-// import image2 from "@/public/testimonials/1.png";
-// import image3 from "@/public/testimonials/1.png"; 
 
 const testimonials = [
   {
     name: "Meera Venkatesh",
     role: "Nutritionist & Cafe Owner",
-    text: "I recommend Wandering Wings eggs to all my customers. Theyre incredibly fresh, rich in nutrients, and have that natural golden yolk you just cant get from regular eggs. Its reassuring to know these eggs come from hens raised freely, ethically, and without any chemicals or antibiotics.",
-    image: image1,
+    text: "I recommend Wandering Wings eggs to all my customers. They’re incredibly fresh, rich in nutrients, and have that natural golden yolk you just can’t get from regular eggs.",
+    image: "/testimonials/1.png",
+    image1: test1,
   },
   {
     name: "Ravi Kumar",
     role: "Restaurant Owner",
     text: "Our kitchen quality improved dramatically after switching to Wandering Wings. The consistency, taste, and freshness make a real difference in every dish we serve.",
-    image: image2,
+    image: "/testimonials/2.png",
+    image1: test2,
+
   },
   {
     name: "Ananya Rao",
     role: "Home Chef",
     text: "Knowing where my food comes from matters. These eggs are clean, ethical, and taste absolutely amazing. I’ll never go back to regular eggs.",
-    image: image3,
+    image: "/testimonials/3.png",
+    image1: test3,
   },
 ];
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
 
-  const prev = () =>
-    setIndex((index - 1 + testimonials.length) % testimonials.length);
+  // 🔁 AUTO SLIDE EVERY 3 SECONDS
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 3000);
 
-  const next = () =>
-    setIndex((index + 1) % testimonials.length);
+    return () => clearInterval(interval);
+  }, []);
+
+  const prev = () =>
+    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+
+  const next = () => setIndex((prev) => (prev + 1) % testimonials.length);
 
   const t = testimonials[index];
 
   return (
-    <section className="relative bg-[#2b1d12] text-white py-20 overflow-hidden">
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-0" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        
+    <section
+      className="relative overflow-hidden text-white py-16 md:py-20 bg-cover bg-center"
+      style={{ backgroundImage: "url('/hens1.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-[#2b1d12]/85"></div>
+      <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
         <div>
-          <p className="text-yellow-400 text-sm tracking-widest mb-3">
-            ✦ OUR TESTIMONIALS
-          </p>
+          <div className="mb-10 min-h-[110px]">
+            <p className="text-yellow-400 text-sm tracking-widest mb-3">
+              ✦ OUR TESTIMONIALS
+            </p>
 
-          <h2 className="text-3xl md:text-4xl font-serif leading-tight mb-6">
-            Real feedback from families and kitchens we proudly serve
-          </h2>
+            <h2 className="text-3xl md:text-4xl font-serif">
+              Real feedback from families & kitchens we proudly serve
+            </h2>
+          </div>
 
           {/* Stars */}
           <div className="flex gap-1 mb-4">
-            {Array(5)
-              .fill(0)
-              .map((_, i) => (
-                <span key={i} className="text-yellow-400">★</span>
-              ))}
+            {Array.from({ length: 5 }).map((_, i) => (
+              <span key={i} className="text-yellow-400 text-lg">
+                ★
+              </span>
+            ))}
           </div>
 
-          {/* Testimonial Text */}
-          <p className="text-white/80 text-base leading-relaxed mb-8">
-            {t.text}
-          </p>
+          {/* Text */}
+          <div className="min-h-[140px] md:min-h-[160px] mb-8">
+            <p className="text-white/80 leading-relaxed">{t.text}</p>
+            <hr className="mt-10" />
+          </div>
+          {/* Author + Controls */}
 
-          {/* Author */}
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="font-semibold">{t.name}</p>
-              <p className="text-sm text-white/60">{t.role}</p>
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center gap-3">
+              <Image
+                src={t.image1}
+                alt={t.name}
+                width={50}
+                height={50}
+                className="rounded-full border-2 border-white object-cover"
+              />
+
+              <div>
+                <p className="font-semibold leading-tight">{t.name}</p>
+                <p className="text-sm text-white/60">{t.role}</p>
+              </div>
             </div>
 
-            {/* Navigation */}
             <div className="flex gap-3">
               <button
                 onClick={prev}
-                className="w-10 h-10 rounded-full bg-yellow-400 text-black flex items-center justify-center hover:scale-105 transition"
+                className="w-10 h-10 rounded-full bg-yellow-400 text-black flex items-center justify-center hover:scale-105 transition border-2 border-white"
               >
-                <ArrowLeft size={18} />
+                <ArrowLeft size={18} className="text-white" />
               </button>
-
               <button
                 onClick={next}
-                className="w-10 h-10 rounded-full bg-yellow-400 text-black flex items-center justify-center hover:scale-105 transition"
+                className="w-10 h-10 rounded-full bg-yellow-400 text-black flex items-center justify-center hover:scale-105 transition border-2 border-white"
               >
-                <ArrowRight size={18} />
+                <ArrowRight size={18} className="text-white" />
               </button>
             </div>
           </div>
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="relative max-w-md mx-auto">
-          <div className="relative h-[420px] w-full rounded-3xl overflow-hidden shadow-xl">
+        <div className="relative max-w-md mx-auto w-full">
+          <div className="relative h-[350px] md:h-[420px] rounded-3xl overflow-hidden shadow-xl">
             <Image
+              key={t.image} // forces smooth image swap
               src={t.image}
               alt={t.name}
               fill
-              className="object-cover"
+              className="object-cover transition-opacity duration-700"
+              priority
             />
           </div>
 
-          {/* Trust Badge */}
-          <div className="absolute bottom-6 left-6 right-6 bg-gradient-to-r from-blue-400 to-orange-400 text-white rounded-xl px-4 py-3 text-sm flex items-center gap-3">
-            <div className="flex -space-x-2">
-              <img src="/avatars/a1.jpg" className="w-8 h-8 rounded-full border" />
-              <img src="/avatars/a2.jpg" className="w-8 h-8 rounded-full border" />
-              <img src="/avatars/a3.jpg" className="w-8 h-8 rounded-full border" />
+          {/* Badge */}
+          <div className="absolute bottom-4 left-4 right-4">
+            <div
+              className="
+    flex items-center gap-4
+    bg-white/30 backdrop-blur-md
+    border border-white/40
+    rounded-2xl px-4 py-3
+    shadow-lg
+  "
+            >
+              {/* Avatars */}
+              <div className="flex -space-x-3">
+                <img
+                  src="/testimonials/1.png"
+                  alt="User 1"
+                  className="w-9 h-9 rounded-full border-1 border-black object-cover"
+                />
+                <img
+                  src="/testimonials/2.png"
+                  alt="User 2"
+                  className="w-9 h-9 rounded-full border-1 border-black object-cover"
+                />
+                <img
+                  src="/testimonials/3.png"
+                  alt="User 3"
+                  className="w-9 h-9 rounded-full border-1 border-black object-cover"
+                />
+                <img
+                  src="/testimonials/1.png"
+                  alt="User 4"
+                  className="w-9 h-9 rounded-full border-1 border-black object-cover"
+                />
+              </div>
+
+              {/* Text */}
+              <p className="text-sm md:text-base font-medium text-white leading-tight">
+                Trusted by <span className="font-bold">3,000+</span> Happy{" "}
+                <br className="hidden sm:block" />
+                Milk Lovers Worldwide
+              </p>
             </div>
-            <p className="font-medium">
-              Trusted by 3,000+ Happy Milk Lovers Worldwide
-            </p>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

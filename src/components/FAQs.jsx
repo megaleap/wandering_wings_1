@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import faq from "../app/assets/FAQ.png";
+import { motion } from "framer-motion";
+
 const faqs = [
   {
     question: "Are your eggs 100% natural and free from additives?",
@@ -68,16 +70,32 @@ export default function FAQs() {
             free-range eggs
           </h2>
 
-          <p className="text-sm text-gray-200 mb-8 max-w-md">
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{
+              duration: 0.6,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="text-sm text-gray-200 mb-8 max-w-md"
+          >
             Got questions? We’ve got answers. From how our hens live to how our
             eggs are collected, cleaned, and delivered — here’s everything you
             need to know.
-          </p>
+          </motion.p>
 
           {/* Accordion */}
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div
+              <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{
+              duration: 0.6,
+              ease: [0.22, 1, 0.36, 1],
+            }}
                 key={index}
                 className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden"
               >
@@ -107,7 +125,7 @@ export default function FAQs() {
                 >
                   {faq.answer}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
