@@ -3,34 +3,33 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import image1 from "../app/assets/testimonials/1.avif";
-import image2 from "../app/assets/testimonials/1.avif";
-import image3 from "../app/assets/testimonials/1.avif";
+// import image1 from "../app/assets/testimonials/1.png";
+// import image2 from "../app/assets/testimonials/1.png";
+// import image3 from "../app/assets/testimonials/1.png";
+import image1 from "../../public/testimonials/1.png";
+import image2 from "../../public/testimonials/1.png";
+import image3 from "../../public/testimonials/1.png";
 
+// import image2 from "@/public/testimonials/1.png";
+// import image3 from "@/public/testimonials/1.png"; 
 
 const testimonials = [
   {
     name: "Meera Venkatesh",
-    role: "Nutritionist & Café Owner",
-    text: `I recommend Wandering Wings eggs to all my customers. They’re incredibly
-    fresh, rich in nutrients, and have that natural golden yolk you just can’t get
-    from regular eggs. It’s reassuring to know these eggs come from hens raised
-    freely, ethically, and without any chemicals or antibiotics.`,
+    role: "Nutritionist & Cafe Owner",
+    text: "I recommend Wandering Wings eggs to all my customers. Theyre incredibly fresh, rich in nutrients, and have that natural golden yolk you just cant get from regular eggs. Its reassuring to know these eggs come from hens raised freely, ethically, and without any chemicals or antibiotics.",
     image: image1,
   },
   {
     name: "Ravi Kumar",
     role: "Restaurant Owner",
-    text: `Our kitchen quality improved dramatically after switching to Wandering Wings.
-    The consistency, taste, and freshness make a real difference in every dish we
-    serve.`,
+    text: "Our kitchen quality improved dramatically after switching to Wandering Wings. The consistency, taste, and freshness make a real difference in every dish we serve.",
     image: image2,
   },
   {
     name: "Ananya Rao",
     role: "Home Chef",
-    text: `Knowing where my food comes from matters. These eggs are clean, ethical,
-    and taste absolutely amazing. I’ll never go back to regular eggs.`,
+    text: "Knowing where my food comes from matters. These eggs are clean, ethical, and taste absolutely amazing. I’ll never go back to regular eggs.",
     image: image3,
   },
 ];
@@ -130,3 +129,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

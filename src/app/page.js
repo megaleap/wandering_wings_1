@@ -8,7 +8,8 @@ import FAQs from '@/components/FAQs'
 import WanderingBlogs from '@/components/WanderingBlogs'
 import WanderingKitchen from '@/components/WanderingKitchen'
 
-import AboutFarm from './about/page'
+// import AboutFarm from './about/page'
+import AboutFarm from  "../app/about/page";
 
 const page = () => {
   return (
