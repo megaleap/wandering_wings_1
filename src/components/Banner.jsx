@@ -34,7 +34,7 @@ const Banner = () => {
         {/* First set of items */}
         {items.map((item, index) => (
           <div key={`first-${index}`} className="flex items-center px-8">
-            <span className="text-black font-bold text-lg md:text-xl">
+            <span className="text-black font-bold text-lg md:text-2xl">
               {item}
             </span>
             <span className="ml-8 text-black text-2xl">✦</span>

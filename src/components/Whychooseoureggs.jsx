@@ -68,7 +68,7 @@ const Whychooseoureggs = () => {
       {/* Heading */}
       <div className="text-center max-w-4xl mx-auto mb-16">
         <p className="text-lg tracking-widest text-[#3b2518] mb-2">
-          Why choose our eggs
+          <span className="text-yellow-500">✦</span>Why choose our eggs
         </p>
         <h2 className="text-3xl md:text-4xl font-bold text-[#3b2518]">
           Natural Eggs vs Regular Eggs — What’s the Real Difference?

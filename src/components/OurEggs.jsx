@@ -78,8 +78,8 @@ useEffect(() => {
     >
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <p className="text-lg tracking-widest text-yellow-400 mb-3">
-          OUR EGGS
+        <p className="text-lg tracking-widest text-white mb-3">
+          <span className="text-yellow-500">✦</span>OUR EGGS
         </p>
         <h2 className="text-3xl md:text-5xl font-bold">
           Our Eggs – Pure, Nutritious <br /> & Naturally Better

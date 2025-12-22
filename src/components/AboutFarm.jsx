@@ -59,16 +59,17 @@ export default function AboutFarm() {
                 isVisible ? "animate-slide-up delay-1" : "opacity-0"
               }`}
             >
-              <p className="text-sm uppercase tracking-wider text-[#39251A]">
-                About Our Farm
+              <p className="text-sm font-bold uppercase tracking-wider text-[#39251A]">
+               <span className="text-yellow-500"> ✦</span> About Our Farm
               </p>
               <div className="flex">
                 <div>
-                   <h2 className="text-3xl md:text-4xl font-bold text-[#39251A]">
-                  From Our Open, Natural Farms to Homes Across India
-                </h2>
+                  <h2 className="text-3xl md:text-5xl font-bold text-[#39251A]">
+                    From Our Open, Natural Farms to Homes, Stores & Kitchens
+                    Across India
+                  </h2>
                 </div>
-               
+
                 {/* Rotating Banner */}
                 <div className="relative flex justify-end">
                   <div className="rotate-360 relative w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center ">
@@ -165,9 +166,9 @@ export default function AboutFarm() {
                 isVisible ? "animate-slide-up delay-4" : "opacity-0"
               }`}
             >
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-8 py-4 rounded-lg transition">
+              {/* <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-8 py-4 rounded-lg transition">
                 Learn More About Us →
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

@@ -38,6 +38,49 @@ const page = () => {
         </div>
       </section>
       <Banner/>
+      <section className="bg-[#FAF7F2] py-20 px-6">
+        <div className="max-w-3xl 2xl:max-w-4xl mx-auto">
+          <div className="bg-white border border-[#E6D9C7] rounded-2xl shadow-sm p-10 md:p-14 text-center">
+            {/* Icon */}
+            <div className="flex justify-center mb-6">
+              <div className="w-14 h-14 rounded-full bg-green-50 flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6 text-green-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 3c4.5 0 8 3.5 8 8 0 5-4 9-8 10-4-1-8-5-8-10 0-4.5 3.5-8 8-8z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            {/* Title */}
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#3A2A1A] mb-6">
+              A Mission to Transform Egg Production
+            </h2>
+
+            {/* Content */}
+            <p className="text-gray-700 text-lg leading-relaxed">
+              On <strong>December 25th, 2023</strong>, Wandering Wings was founded
+              by <strong>Rahul Raj</strong>, a passionate and curious mind who
+              began his journey simply searching for{" "}
+              <strong>quality, ethically raised eggs</strong> for himself. What
+              started as a personal quest soon unfolded into a purpose-driven
+              mission to transform India’s egg production landscape through{" "}
+              <strong>humane, free-range practices</strong> and by{" "}
+              <strong>empowering rural farmers</strong> with modern
+              contract-farming methods and industry best practices.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -79,25 +79,25 @@ const OurBenefits = () => {
 
         {/* Right Column */}
         <div className="md:w-1/2 flex flex-col gap-6 justify-center">
-          <p className="text-sm tracking-widest text-white">OUR BENEFITS</p>
+          <p className="text-sm tracking-widest text-white"><span className="text-yellow-500">✦</span>OUR BENEFITS</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white">
             Unmatched Freshness, Delivered Daily
           </h2>
 
           {/* Card 1 */}
-          <div className="relative group overflow-hidden bg-[#4D3A2A] p-6 rounded-xl transition-all duration-500 cursor-pointer">
+          <div className="relative group overflow-hidden bg-[#4D3A2A] border-l-4  border-yellow-400  p-6 rounded-xl transition-all duration-500 cursor-pointer">
             {/* Hover overlay */}
-            <div className="absolute inset-0 bg-yellow-400 translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-0"></div>
+            <div className="absolute inset-0 bg-yellow-400  -translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-0"></div>
 
             <div className="relative z-10 flex items-start gap-4">
               <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
-                <FiPackage className="w-5 h-5 text-black" />
+                <FiPackage className="w-5 h-5 text-white group-hover:text-black" />
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-1">
+                <h3 className="font-semibold text-white group-hover:text-black mb-1">
                   Unmatched Freshness, Delivered Daily
                 </h3>
-                <p className="text-sm text-white">
+                <p className="text-sm text-white group-hover:text-black">
                   We hand-collect our eggs every single morning, ensuring richer yolks, firm whites and true farm-fresh flavour. No long storage cycles. No warehouse delays. Just the kind of freshness you can see, smell and taste.
                 </p>
               </div>
@@ -105,26 +105,26 @@ const OurBenefits = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="relative group overflow-hidden bg-[#4D3A2A] p-6 rounded-xl transition-all duration-500 cursor-pointer">
-            <div className="absolute inset-0 bg-yellow-400 translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-0"></div>
+          <div className="relative group overflow-hidden border-l-4  border-yellow-400 bg-[#4D3A2A] p-6 rounded-xl transition-all duration-500 cursor-pointer">
+            <div className="absolute inset-0 bg-yellow-400 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-0"></div>
             <div className="relative z-10 flex items-start gap-4">
               <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
-                <FiCheckCircle className="w-5 h-5 text-black" />
+                <FiCheckCircle className="w-5 h-5 text-white group-hover:text-black" />
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-1">
+                <h3 className="font-semibold text-white group-hover:text-black mb-1">
                   Clean, Natural & Chemical-Free
                 </h3>
-                <p className="text-sm text-white">
+                <p className="text-sm text-white group-hover:text-black">
                   Our eggs are as honest as farming gets — zero antibiotics, zero boosters, zero chemical cleaning. Every shell carries its own natural protection, and every egg reflects the health and freedom of the hen that laid it.
                 </p>
               </div>
             </div>
           </div>
 
-          <button className="mt-4 inline-block bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition-all duration-300 w-fit">
+          {/* <button className="mt-4 inline-block bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition-all duration-300 w-fit">
             Bring Home The Best →
-          </button>
+          </button> */}
         </div>
       </div>
     </section>
