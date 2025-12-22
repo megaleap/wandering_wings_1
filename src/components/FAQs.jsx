@@ -62,7 +62,8 @@ export default function FAQs() {
         {/* FAQ Content */}
         <div className="text-white">
           <p className="text-sm tracking-widest text-yellow-400 mb-3">
-            ✦ FREQUENTLY ASKED QUESTIONS
+            ✦
+            <span className="text-white font-bold"> FREQUENTLY ASKED QUESTIONS</span>
           </p>
 
           <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">

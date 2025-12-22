@@ -1,8 +1,9 @@
 import React from "react";
-import { Phone, MapPin, Mail, Send } from "lucide-react";
+import { Phone, MapPin, Mail, Send, Twitter, Linkedin } from "lucide-react";
 import Image from "next/image";
 import wander from "../app/assets/Wandiring.svg";
-
+// import TwitterXIcon from "@/components/icons/TwitterXIcon";
+import TwitterXIcon from "./TwitterXIcon";
 const Footer = () => {
   return (
     <footer className="bg-[#3a2a1f] text-white">
@@ -22,7 +23,7 @@ const Footer = () => {
           <p className="text-sm mb-6 text-gray-200">
             Healthy Eggs, Happy Hens.
           </p>
-
+          <hr className="border-t border-white/20 mb-4" />
           <div className="space-y-4 text-sm text-gray-200">
             <div className="flex items-center gap-3">
               <Phone size={16} />
@@ -40,9 +41,9 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div>
-          <h4 className="font-semibold text-lg mb-4">Quick Link</h4>
-          <ul className="space-y-3 text-sm text-gray-200">
+        <div className="border-l border-white/20  ">
+          <h4 className="font-semibold text-lg mb-4 ml-4">Quick Link</h4>
+          <ul className="space-y-3 text-sm text-gray-200 ml-4">
             <li>Homes</li>
             <li>About Us</li>
             <li>Products</li>
@@ -94,10 +95,23 @@ const Footer = () => {
           <p>Copyright © 2025 All Rights Reserved.</p>
 
           <div className="flex gap-4">
-            <span className="w-8 h-8 rounded-full border border-white/40"></span>
-            <span className="w-8 h-8 rounded-full border border-white/40"></span>
-            <span className="w-8 h-8 rounded-full border border-white/40"></span>
-            <span className="w-8 h-8 rounded-full border border-white/40"></span>
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 hover:text-yellow-400 transition"
+            >
+              <TwitterXIcon size={16} />
+            </a>
+
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 transition"
+            >
+              <Linkedin size={16} />
+            </a>
           </div>
         </div>
       </div>
