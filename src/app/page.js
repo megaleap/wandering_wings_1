@@ -22,8 +22,14 @@ const page = () => {
     <div>
       <Herosection />
       <Banner />
-      <AboutFarm />
-      <OurEggs/>
+       <section id="about-farm">
+        <AboutFarm />
+      </section>
+
+      {/* ABOUT EGGS */}
+      <section id="about-eggs">
+        <OurEggs />
+      </section>
       <Whychooseoureggs/>
       <OurBenefits/>
       <WhyChoose/>

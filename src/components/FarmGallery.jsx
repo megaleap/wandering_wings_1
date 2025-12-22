@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { ArrowRight, Eye } from "lucide-react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 import img1 from "@/app/assets/gallery/1.png";
 import img2 from "@/app/assets/gallery/2.jpeg";
@@ -11,6 +12,8 @@ import img4 from "@/app/assets/gallery/4.jpeg";
 const galleryImages = [img1, img2, img3, img4];
 
 export default function FarmGallery() {
+  const router = useRouter();
+
   return (
     <section className="bg-[#FFF6DE] py-20">
       <div className="max-w-7xl mx-auto px-4 text-center">
@@ -75,6 +78,7 @@ export default function FarmGallery() {
             ease: [0.22, 1, 0.36, 1],
           }}
           className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 transition text-black font-semibold px-6 py-3 rounded-xl"
+        onClick={() => router.push('/gallery')}
         >
           View All
           <span className="w-7 h-7 rounded bg-white flex items-center justify-center">
