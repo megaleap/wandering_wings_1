@@ -98,9 +98,9 @@ export default function WanderingBlogs() {
                   {blog.title}
                 </p>
 
-                <button className="text-[#3A2417] font-semibold flex items-center gap-2 hover:underline">
+                {/* <button className="text-[#3A2417] font-semibold flex items-center gap-2 hover:underline">
                   Read More <span>→</span>
-                </button>
+                </button> */}
               </div>
             </motion.div>
           ))}

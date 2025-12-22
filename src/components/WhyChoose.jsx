@@ -4,9 +4,11 @@ import { ArrowRight, Handshake, Diamond, Smile } from "lucide-react";
 import image1 from "../app/assets/whychoose/1.jpeg";
 import image2 from "../app/assets/whychoose/2.jpeg";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function WhyChoose() {
-  const text = "Why Choose Wandering Wings — A Better Egg, Every Day";
+  const router = useRouter();
+  const text = "Why Choose Wandering Wings — A Better  Egg, Every Day";
   const chars = text.split("");
 
   return (
@@ -16,13 +18,13 @@ export default function WhyChoose() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <p className="text-yellow-500 text-xs tracking-widest font-semibold mb-3">
-            ✦ WHY CHOOSE US?
+            ✦<span className="text-[#3b2615]"> WHY CHOOSE US?</span>
           </p>
           <motion.h2
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-120px" }}
-            className="text-3xl md:text-4xl font-serif text-[#3b2615] leading-snug font-extrabold"
+            className="text-3xl md:text-4xl text-[#3b2615] leading-snug font-extrabold"
           >
             {chars.map((char, i) => (
               <motion.span
@@ -30,17 +32,17 @@ export default function WhyChoose() {
                 variants={{
                   hidden: {
                     opacity: 0,
-                    x: 60,
+                    y: 24, // 🌊 start slightly down
                   },
                   visible: {
                     opacity: 1,
-                    x: 0,
+                    y: 0,
                   },
                 }}
                 transition={{
-                  duration: 0.7,
-                  ease: [0.22, 1, 0.36, 1], // ✅ premium smooth easing
-                  delay: (chars.length - i) * 0.035, // ✅ reverse cascade
+                  duration: 0.6,
+                  ease: [0.25, 0.8, 0.25, 1], // 🌊 smooth tide
+                  delay: i * 0.045, // 👉 left → right wave
                 }}
                 className="inline-block"
               >
@@ -48,6 +50,7 @@ export default function WhyChoose() {
               </motion.span>
             ))}
           </motion.h2>
+
           {/* <p>
             See how naturally raised eggs compare to conventional, industrial
             eggs.
@@ -66,7 +69,7 @@ export default function WhyChoose() {
           </div>
 
           <div>
-            <h3 className="text-3xl md:text-4xl font-serif text-[#3b2615] leading-snug font-extrabold  mb-4">
+            <h3 className="text-3xl md:text-4xl   text-[#3b2615] leading-snug font-extrabold  mb-4">
               Our Commitment to Care
             </h3>
             <motion.p
@@ -94,7 +97,8 @@ export default function WhyChoose() {
                 delay: 0.15, // ✅ button comes slightly after text
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 transition text-black text-sm font-extrabold px-5 py-3 rounded-xl shadow"
+              className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 transition text-black text-sm font-extrabold px-5 py-3 rounded-xl shadow cursor-pointer" 
+              onClick={() => router.push('/contact')}
             >
               Contact Us
               <span className="w-7 h-7 rounded bg-white flex items-center justify-center">
@@ -107,7 +111,7 @@ export default function WhyChoose() {
         {/* ROW 2 */}
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div className="order-2 lg:order-1">
-            <h3 className="text-3xl md:text-4xl font-serif text-[#3b2615] leading-snug font-extrabold mb-4">
+            <h3 className="text-3xl md:text-4xl   text-[#3b2615] leading-snug font-extrabold mb-4">
               Our Commitment to Customer
             </h3>
             <motion.p

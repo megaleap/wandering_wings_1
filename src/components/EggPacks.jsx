@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 import pack1 from "../app/assets/eggPacks/6pack.jpg";
 import pack2 from "../app/assets/eggPacks/12.jpg";
 import pack3 from "../app/assets/eggPacks/30packs.jpeg";
 import pack4 from "../app/assets/eggPacks/120pack.jpg";
 import pack5 from "../app/assets/eggPacks/300pack.jpg";
-
-import { motion } from "framer-motion";
 
 const products = [
   {
@@ -42,8 +42,9 @@ export default function EggPacks() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-yellow-500 tracking-widest text-xs font-semibold mb-3">
-            ✦ OUR PRODUCT
+          <p className="text-yellow-500 tracking-widest text-md font-semibold mb-3">
+            ✦ 
+            <span className="text-[#3b2615]"> OUR PRODUCTS</span>
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-[#3b2615] font-extrabold">
             Our Free-Range Egg Packs
@@ -51,21 +52,19 @@ export default function EggPacks() {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
           {products.map((item, idx) => (
             <motion.div
+              key={idx}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-120px" }}
-              transition={{
-                duration: 0.6,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              key={idx}
-              className="text-center"
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -8 }} // 👈 slide up on hover
+              className="text-center w-full max-w-[360px]" // 👈 important
             >
               {/* Image Card */}
-              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-white shadow-md mb-5">
+              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-white shadow-md  transition-shadow duration-300 mb-5">
                 <Image
                   src={item.image}
                   alt={item.title}

@@ -8,26 +8,59 @@ import test1 from "../app/assets/Ellipse 744.png";
 import test2 from "../app/assets/Ellipse 746.png";
 import test3 from "../app/assets/Ellipse 747.png";
 
-
 const testimonials = [
   {
     name: "Meera Venkatesh",
     role: "Nutritionist & Cafe Owner",
-    text: "I recommend Wandering Wings eggs to all my customers. They’re incredibly fresh, rich in nutrients, and have that natural golden yolk you just can’t get from regular eggs.",
+    heading: "For Chefs Who Refuse to Compromise on Quality",
+
+    title: "⭐ Why Chefs Choose Wandering Wings",
+
+    points: [
+      "Consistent yolk colour & flavour",
+      "Firmer whites for baking & poaching",
+      "Odour-free eggs ideal for gourmet dishes",
+      "Reliable supply, delivered fresh every morning",
+      "No antibiotics, no artificial colour — just honest ingredients",
+    ],
+
+    text: "You need consistency, flavour and colour you can depend on — every single day. Our golden-yolk eggs deliver richer taste, stronger structure and clean aroma, making them perfect for baking, plating and every high-performance kitchen.",
+
     image: "/testimonials/1.png",
     image1: test1,
   },
+
   {
     name: "Ravi Kumar",
     role: "Restaurant Owner",
+    heading: "For Families Who Want Safe, Nutritious Food",
+    title: "⭐ Why Retailers Partner With Us",
+
+    points: [
+      "Strong customer loyalty & repeat sales",
+      "Fresh stock supplied consistently",
+      "Premium packaging with clear value cues",
+      "Zero-antibiotic, chemical-free promise customers love",
+      "A brand associated with quality & trust",
+    ],
     text: "Our kitchen quality improved dramatically after switching to Wandering Wings. The consistency, taste, and freshness make a real difference in every dish we serve.",
     image: "/testimonials/2.png",
     image1: test2,
-
   },
+
   {
     name: "Ananya Rao",
     role: "Home Chef",
+    heading: "For Retailers Who Want Products Customers Return For",
+    title: "⭐ Why Homemakers Trust Us",
+
+    points: [
+      "Clean aroma (no fishy smell)",
+      "Naturally golden yolks",
+      "Higher nutrition: more Vitamin D, Omega-3 & antioxidants",
+      "Fresh eggs collected every morning",
+      "From well-cared hens raised on open natural land",
+    ],
     text: "Knowing where my food comes from matters. These eggs are clean, ethical, and taste absolutely amazing. I’ll never go back to regular eggs.",
     image: "/testimonials/3.png",
     image1: test3,
@@ -62,14 +95,17 @@ export default function Testimonials() {
       <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
         <div>
-          <div className="mb-10 min-h-[110px]">
-            <p className="text-yellow-400 text-sm tracking-widest mb-3">
-              ✦ OUR TESTIMONIALS
+          <div className=" min-h-[110px]">
+            <p className="text-yellow-400 text-md tracking-widest mb-3">
+              ✦<span className="text-white font-bold"> OUR FUN FACTS</span>
             </p>
 
-            <h2 className="text-3xl md:text-4xl font-serif">
+            {/* <h2 className="text-3xl md:text-4xl ">
               Real feedback from families & kitchens we proudly serve
-            </h2>
+            </h2> */}
+            <div className="min-h-[100px] md:min-h-[100px] mb-4">
+              <h2 className="text-3xl md:text-4xl ">{t.heading}</h2>
+            </div>
           </div>
 
           {/* Stars */}
@@ -82,10 +118,32 @@ export default function Testimonials() {
           </div>
 
           {/* Text */}
-          <div className="min-h-[140px] md:min-h-[160px] mb-8">
+          <div className="min-h-[140px] md:min-h-[160px] mb-4">
             <p className="text-white/80 leading-relaxed">{t.text}</p>
             <hr className="mt-10" />
           </div>
+
+          {/* Fun Facts / Points */}
+          {t.title && t.points && (
+            <div className="mb-8 bg-white/10 border border-white/20 rounded-2xl p-6">
+              <span className="block text-yellow-400 font-semibold mb-4">
+                {t.title}
+              </span>
+
+              <ul className="space-y-2">
+                {t.points.map((point, i) => (
+                  <li
+                    key={i}
+                    className="text-white/90 text-sm flex items-start gap-2"
+                  >
+                    <span className="text-yellow-400 mt-[2px]">✔</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Author + Controls */}
 
           <div className="flex items-center justify-between flex-wrap gap-4">
@@ -123,7 +181,7 @@ export default function Testimonials() {
 
         {/* RIGHT IMAGE */}
         <div className="relative max-w-md mx-auto w-full">
-          <div className="relative h-[350px] md:h-[420px] rounded-3xl overflow-hidden shadow-xl">
+          <div className="relative h-[350px] md:h-[720px] rounded-3xl overflow-hidden shadow-xl">
             <Image
               key={t.image} // forces smooth image swap
               src={t.image}
