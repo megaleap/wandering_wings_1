@@ -74,14 +74,14 @@ export default function Nav() {
                     Gallery
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="/about/story"
                     className="block px-5 py-2 hover:bg-yellow-300"
                   >
                     Our Story
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
