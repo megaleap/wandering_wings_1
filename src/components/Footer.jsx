@@ -1,10 +1,49 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import axios from "axios";
 import { Phone, MapPin, Mail, Send, Twitter, Linkedin } from "lucide-react";
 import Image from "next/image";
 import wander from "../app/assets/Wandiring.svg";
 // import TwitterXIcon from "@/components/icons/TwitterXIcon";
 import TwitterXIcon from "./TwitterXIcon";
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const validateEmail = (email) => {
+    return /^\S+@\S+\.\S+$/.test(email);
+  };
+
+  const handleSubscribe = async () => {
+    setError("");
+    setSuccess("");
+
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      await axios.post("/api/newsletter", { email });
+      setSuccess("Thank you for subscribing!");
+      setEmail("");
+
+      setTimeout(() => setSuccess(""), 3000);
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <footer className="bg-[#3a2a1f] text-white">
       {/* Top Section */}
@@ -75,12 +114,33 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Email Address *"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setError("");
+              }}
               className="bg-transparent px-4 py-3 w-full text-sm outline-none placeholder-gray-300"
             />
-            <button className="bg-yellow-400 p-3 text-black">
-              <Send size={18} />
+            <button
+              onClick={handleSubscribe}
+              disabled={loading}
+              className="
+                bg-yellow-400 p-3 text-black
+                hover:bg-yellow-500
+                transition
+                flex items-center justify-center
+                disabled:opacity-70
+               "
+            >
+              {loading ? (
+                <span className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+              ) : (
+                <Send size={18} />
+              )}
             </button>
           </div>
+          {error && <p className="text-red-400 text-xs mb-2">{error}</p>}
+          {success && <p className="text-green-400 text-xs mb-2">{success}</p>}
 
           <div className="flex items-center gap-3 text-sm text-gray-200">
             <Mail size={16} />

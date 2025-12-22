@@ -7,6 +7,7 @@ import hens from "../app/assets/hens1.jpg";
 import test1 from "../app/assets/Ellipse 744.png";
 import test2 from "../app/assets/Ellipse 746.png";
 import test3 from "../app/assets/Ellipse 747.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
@@ -94,19 +95,31 @@ export default function Testimonials() {
       <div className="absolute inset-0 bg-[#2b1d12]/85"></div>
       <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
-        <div>
-          <div className=" min-h-[110px]">
-            <p className="text-yellow-400 text-md tracking-widest mb-3">
-              ✦<span className="text-white font-bold"> OUR FUN FACTS</span>
-            </p>
+        <div className=" overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              className=" min-h-[110px]"
+              key={index}
+              initial={{ x: 80, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -60, opacity: 0 }}
+              transition={{
+                duration: 1.6,
+                ease: [0.22, 1, 0.36, 1], // smooth premium easing
+              }}
+            >
+              <p className="text-yellow-400 text-md tracking-widest mb-3">
+                ✦<span className="text-white font-bold"> OUR FUN FACTS</span>
+              </p>
 
-            {/* <h2 className="text-3xl md:text-4xl ">
+              {/* <h2 className="text-3xl md:text-4xl ">
               Real feedback from families & kitchens we proudly serve
             </h2> */}
-            <div className="min-h-[100px] md:min-h-[100px] mb-4">
-              <h2 className="text-3xl md:text-4xl ">{t.heading}</h2>
-            </div>
-          </div>
+              <div className="min-h-[100px] md:min-h-[100px] mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold ">{t.heading}</h2>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
           {/* Stars */}
           <div className="flex gap-1 mb-4">
@@ -196,12 +209,12 @@ export default function Testimonials() {
           <div className="absolute bottom-4 left-4 right-4">
             <div
               className="
-    flex items-center gap-4
-    bg-white/30 backdrop-blur-md
-    border border-white/40
-    rounded-2xl px-4 py-3
-    shadow-lg
-  "
+              flex items-center gap-4
+              bg-white/30 backdrop-blur-md
+              border border-white/40
+              rounded-2xl px-4 py-3
+              shadow-lg
+             "
             >
               {/* Avatars */}
               <div className="flex -space-x-3">
