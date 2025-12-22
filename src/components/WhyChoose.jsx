@@ -94,15 +94,32 @@ export default function WhyChoose() {
               viewport={{ once: true, margin: "-120px" }}
               transition={{
                 duration: 0.6,
-                delay: 0.15, // ✅ button comes slightly after text
+                delay: 0.15,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 transition text-black text-sm font-extrabold px-5 py-3 rounded-xl shadow cursor-pointer" 
-              onClick={() => router.push('/contact')}
+              onClick={() => router.push("/contact")}
+              className="
+                group inline-flex items-center gap-2
+                bg-yellow-400 hover:bg-white
+                transition-colors duration-300
+                text-black text-sm font-extrabold
+                px-5 py-3 rounded-xl shadow cursor-pointer
+              "
             >
               Contact Us
-              <span className="w-7 h-7 rounded bg-white flex items-center justify-center">
+              <span
+                className="
+                  w-7 h-7 rounded
+                  bg-white group-hover:bg-yellow-400
+                  transition-colors duration-300
+                  flex items-center justify-center
+                "
+              >
                 <ArrowRight size={16} className="text-black" />
+                {/* <ArrowRight
+                  size={16}
+                  className="text-black group-hover:translate-x-0.5 transition-transform"
+                /> */}
               </span>
             </motion.button>
           </div>

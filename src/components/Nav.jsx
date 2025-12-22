@@ -20,7 +20,6 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex h-28 max-w-7xl items-center justify-between px-10 pr-16">
-        
         {/* Logo */}
         <Image src={wander} alt="Wandering Wings" className="h-16 w-auto" />
 

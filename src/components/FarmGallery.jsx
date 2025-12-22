@@ -81,7 +81,9 @@ export default function FarmGallery() {
         onClick={() => router.push('/gallery')}
         >
           View All
-          <span className="w-7 h-7 rounded bg-white flex items-center justify-center">
+          <span
+            className="w-7 h-7 rounded bg-white flex items-center justify-center group-hover:bg-yellow-400 transition-colors duration-300"
+          >
             <ArrowRight size={16} className="text-black" />
           </span>
         </motion.button>

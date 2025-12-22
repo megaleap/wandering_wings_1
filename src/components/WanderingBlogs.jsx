@@ -42,9 +42,9 @@ export default function WanderingBlogs() {
             </h2>
           </div>
 
-          <button className="self-start md:self-auto bg-[#FFD21F] text-[#3A2417] font-semibold px-6 py-3 rounded flex items-center gap-2 hover:opacity-90 transition">
+          <button className="group  self-start md:self-auto bg-[#FFD21F] text-[#3A2417] font-semibold px-6 py-3 rounded flex items-center gap-2 transition hover:bg-white cursor-pointer">
             View All Blogs
-            <span className="w-7 h-7 rounded bg-white flex items-center justify-center">
+            <span className="w-7 h-7 rounded bg-white flex items-center justify-center group-hover:bg-yellow-400">
               <ArrowRight size={16} className="text-black" />
             </span>
           </button>
@@ -71,25 +71,25 @@ export default function WanderingBlogs() {
                   alt="Blog Image"
                   fill
                   className="
-      object-cover
-      rounded-t-[18px]
-      transition-transform duration-700 ease-out
-      group-hover:scale-110
-    "
+                    object-cover
+                    rounded-t-[18px]
+                    transition-transform duration-700 ease-out
+                    group-hover:scale-110
+                   "
                 />
 
                 {/* Diagonal White Overlay */}
                 <span
                   className="
-      absolute
-      inset-0
-      bg-white/40
-      rotate-[-35deg]
-      scale-0
-      origin-center
-      transition-transform duration-700 ease-out
-      group-hover:scale-150
-    "
+                  absolute
+                  inset-0
+                  bg-white/40
+                  rotate-[-35deg]
+                  scale-0
+                  origin-center
+                  transition-transform duration-700 ease-out
+                  group-hover:scale-150
+                 "
                 />
               </div>
 

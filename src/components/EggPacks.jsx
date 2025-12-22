@@ -44,9 +44,9 @@ export default function EggPacks() {
         <div className="text-center mb-14">
           <p className="text-yellow-500 tracking-widest text-md font-semibold mb-3">
             ✦ 
-            <span className="text-[#3b2615]"> OUR PRODUCTS</span>
+            <span className="text-[#3b2615] font-bold"> OUR PRODUCTS</span>
           </p>
-          <h2 className="text-3xl md:text-4xl font-serif text-[#3b2615] font-extrabold">
+          <h2 className="text-3xl md:text-4xl  text-[#3b2615] font-extrabold">
             Our Free-Range Egg Packs
           </h2>
         </div>
