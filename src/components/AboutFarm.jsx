@@ -52,7 +52,7 @@ export default function AboutFarm() {
           </div>
 
           {/* Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 mt-16 lg:mt-0">
             {/* Header */}
             <div
               className={`space-y-3 transition-opacity ${
