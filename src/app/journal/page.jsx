@@ -7,7 +7,7 @@ const page = () => {
     <div>
       {/* Hero Section */}
       <section
-        className="relative min-h-full py-36 flex items-center"
+        className="relative min-h-full py-36 mt-28 flex items-center"
         style={{
           backgroundImage:
             "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD33YJ6e1-9noPRH-KptfttPfJL0lSiekRzHAiD2ciF2-dCyzE_xt7L7dEYvr9BOhAZvrYOJdi61MUguLZMsSHDeeckTSibvuwWpBc1P1Bx0IPuqzX248VaUmQx8ScdwnFgepohkj_IFhrBqHRoXjRmkHxfUrKGTxiwlZtKWMMS3JQlvvG9-hd2Oc40fmu15vlz0rTGE54fj9KAsX9VKo3RTCI5t15gi6bfwywDZTFg1fvQTEaO1evWrEuZWNGyZ5o-EH4dgG23zU4')",
@@ -152,7 +152,7 @@ const page = () => {
       </section>
 <section className="bg-[#F6F3D6] py-32 px-6">
   <div className='text-center max-w-4xl mx-auto'>
-              <h1 className='text-4xl lg:text-5xl mb-10 text-[#3A2A1A]' >Learning the World to Build for India</h1>
+              <h1 className='text-4xl lg:text-5xl font-bold mb-10 text-[#3A2A1A]' >Learning the World to Build for India</h1>
               <p className='text-lg'>Rahul spent years immersing himself in global knowledge on ethical, sustainable farming. Guided by his natural love for animals and curiosity for living ecosystems, he travelled widely, learning from diverse communities and farms across India and Southeast Asia.</p>
     </div>
   <div className="max-w-5xl mt-20 mx-auto relative">
@@ -333,7 +333,7 @@ const page = () => {
 
   </div>
 </section>
-<section className="bg-[#FFF5DE] py-32 px-6">
+<section className="bg-[#FFF5DE]  px-6">
   <div className="max-w-5xl mx-auto text-center">
 
     <h2 className="text-5xl font-serif font-semibold text-[#4A2B16] mb-4">

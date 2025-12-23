@@ -1,190 +1,160 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+
 import eggs from "../app/assets/Ellipse 743.png";
 import learn from "../app/assets/Learm more.png";
 import customer1 from "../app/assets/Ellipse 754.png";
 import customer2 from "../app/assets/Ellipse 744.png";
 import customer3 from "../app/assets/Ellipse 746.png";
 import customer4 from "../app/assets/Ellipse 747.png";
-import { ArrowRight } from "lucide-react";
 
-// import video from '../app/assets/WhatsApp Video 2025-11-28 at 12.47.56.mp4'
-import Image from "next/image";
-import Nav from "./Nav";
+const AnimatedLine = ({ text, delay = 0 }) => {
+  const chars = text.split("");
+
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="block overflow-hidden"
+    >
+      {chars.map((char, i) => (
+        <motion.span
+          key={i}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{
+            duration: 0.25,
+            ease: [0.25, 0.8, 0.25, 1],
+            delay: delay + i * 0.03,
+          }}
+          className="inline-block"
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </motion.div>
+  );
+};
 
 const Herosection = () => {
-  // const [typedText, setTypedText] = useState("");
-  const [displayedText, setDisplayedText] = useState("");
-
-  const fullText =
-    "Premium Pasture-Raised Eggs for Every Plate that Demands Quality.";
-
-  useEffect(() => {
-    const words = fullText.split(" ");
-    let index = 0;
-
-    const interval = setInterval(() => {
-      setDisplayedText((prev) =>
-        prev ? `${prev} ${words[index]}` : words[index]
-      );
-      index++;
-
-      if (index === words.length) {
-        clearInterval(interval);
-      }
-    }, 400); // ⏱ slow, elegant pace
-
-    return () => clearInterval(interval);
-  }, []);
-
   const videoRef = useRef(null);
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.6; // 🔽 slower (1 = normal)
-      videoRef.current.play().catch((error) => {
-        console.error("Video play error:", error);
-      });
+      videoRef.current.playbackRate = 0.6;
+      videoRef.current.play().catch(() => {});
     }
   }, []);
 
   return (
-    <>
-      <div className="relative  h-full  pt-16 overflow-hidden">
-        {/* Custom Styles */}
+    <div className="relative h-full pt-16 overflow-hidden">
+      {/* Video Background */}
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/videos/chicken-farm.mp4" type="video/mp4" />
+      </video>
 
-        {/* Video Background */}
-        <video
-          ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/videos/chicken-farm.mp4" type="video/mp4" />
-        </video>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[#3b2518]/85 z-10" />
 
-        <div className="absolute inset-0 bg-[#3b2518]/85 z-10 pointer-events-none" />
+      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10 my-20">
+          {/* Left Content */}
+          <div className="max-w-5xl">
+            <p className="text-yellow-400 text-sm md:text-lg mb-6 tracking-wide">
+              ✦ Real Eggs. Real Nutrition. Real Health
+            </p>
 
-        {/* Overlay for better text readability */}
-        {/* <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10"></div> */}
-        <div className="border border-amber-400 max-w-7xl mx-auto">
-          {/* Content */}
-          <div className="flex mb-10">
-            {/* Top Tagline */}
-            <div className="relative z-10 flex flex-col justify-center h-full px-6 md:px-12 lg:px-10 max-w-5xl my-20">
-              <p className="text-white text-sm md:text-base lg:text-lg font-medium tracking-wider mb-4 md:mb-6">
-                <span className="text-yellow-500"> ✦</span>Real Eggs. Real Nutrition. Real Health
-              </p>
+            {/* Animated Heading */}
+           <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight space-y-2">
+  <AnimatedLine text="Premium Pasture-Raised Eggs" />
+  <AnimatedLine text="for Every Plate that" delay={0.4} />
 
-              {/* Main Heading */}
-              <div className="flex items-start gap-4 md:gap-6">
-                <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-  <span className="reveal-line delay-1">
-    Premium Pasture-Raised Eggs
-  </span>
-  <span className="reveal-line delay-2">
-    for Every Plate that
-  </span>
-  <span className="reveal-line delay-3">
-    Demands Quality. <span className="ml-2">🐔</span>
-  </span>
+  <div className="flex items-center gap-3">
+    <AnimatedLine text="Demands Quality" delay={0.9} />
+
+    {/* Hen emoji (NOT animated per character) */}
+    <motion.span
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 1.4, duration: 0.3, ease: "easeOut" }}
+      className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl inline-block"
+    >
+      🐔
+    </motion.span>
+  </div>
 </h1>
 
 
-              </div>
-
-              {/* Description */}
-              <div className="text-white text-base md:text-lg lg:text-lg mb-8 md:mb-10 max-w-3xl space-y-2">
-                <p>
-                  At Wandering Wings, open-pasture farming and herbal-rich feed
-                  ensure every egg delivers:
-                </p>
-                <p>
-                  •Higher Nutrition — more Vitamin D, Omega-3s & natural
-                  antioxidants
-                </p>
-                <p>• Pure Freshness — clean aroma, no fishy smell.</p>
-              </div>
-
-              {/* Bottom Section with CTA and Social Proof */}
-              <div className="flex mb-10 flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-8">
-                {/* CTA Button */}
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-base md:text-lg px-8 py-1.5 rounded-lg flex items-center gap-3 transition-all duration-300 shadow-lg">
-                  Explore Our Farm
-                  <span className="w-10 h-10 rounded bg-white flex items-center justify-center">
-            <ArrowRight size={16} />
-          </span>
-                </button>
-
-                {/* Social Proof */}
-                <div className="flex  items-center gap-4">
-                  {/* Customer Avatars */}
-                  <div className="flex -space-x-3">
-                    <Image
-                      src={customer1}
-                      alt="customer1"
-                      className="w-12 h-12 md:w-14 md:h-14 rounded-full  object-cover"
-                    />
-                    <Image
-                      src={customer2}
-                      alt="Customer 2"
-                      className="w-12 h-12 md:w-14 md:h-14 rounded-full  object-cover"
-                    />
-                    <Image
-                      src={customer4}
-                      alt="Customer 3"
-                      className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover"
-                    />
-                    <Image
-                      src={customer3}
-                      alt="Customer 4"
-                      className="w-12 h-12 md:w-14 md:h-14 rounded-full  object-cover"
-                    />
-                  </div>
-
-                  {/* Trust Text */}
-                  <div className="text-white">
-                    <p className="font-semibold text-base md:text-lg">
-                      Trusted By More Than
-                    </p>
-                    <p className="font-bold text-lg md:text-xl">2k Clients</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative Badge (Top Right) */}
+            {/* Description */}
+            <div className="text-white text-base md:text-lg mt-8 max-w-3xl space-y-2">
+              <p>
+                At Wandering Wings, open-pasture farming and herbal-rich feed
+                ensure every egg delivers:
+              </p>
+              <p>• Higher Nutrition — Vitamin D, Omega-3s & antioxidants</p>
+              <p>• Pure Freshness — clean aroma, no fishy smell</p>
             </div>
 
-            {/* Rotating Badge with Eggs */}
-            <div className="flex">
-              <div className="absolute top-1/2  z-30">
-                <div className="relative">
-                  {/* Egg Carton Image - base layer */}
-                  <Image
-                    src={eggs}
-                    alt="Wandering Wings"
-                    className="w-16 h-16 md:w-20 md:h-20 lg:w-32 lg:h-32 object-contain"
-                  />
+            {/* CTA + Social Proof */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 mt-10">
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-8 py-3 rounded-lg flex items-center gap-3 shadow-lg transition">
+                Explore Our Farm
+                <span className="w-10 h-10 bg-white rounded flex items-center justify-center">
+                  <ArrowRight size={16} />
+                </span>
+              </button>
 
-                  {/* Circular Yellow Badge - overlapping on top right */}
-                  <div className="absolute -top-2 -right-2 md:-top-0 md:-right-22">
-                    <div className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-yellow-400 rounded-full flex items-center justify-center border-4 border-white shadow-xl animate-spin-slow">
+              <div className="flex items-center gap-4">
+                <div className="flex -space-x-3">
+                  {[customer1, customer2, customer4, customer3].map(
+                    (img, i) => (
                       <Image
-                        src={learn}
-                        alt="Learn More"
-                        className="w-16 h-16 md:w-20 md:h-20 lg:w-36 lg:h-36 object-contain"
+                        key={i}
+                        src={img}
+                        alt="Customer"
+                        className="w-12 h-12 rounded-full object-cover"
                       />
-                    </div>
-                  </div>
+                    )
+                  )}
                 </div>
+                <div className="text-white">
+                  <p className="font-semibold">Trusted By</p>
+                  <p className="font-bold text-lg">2k+ Clients</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Floating Badge */}
+          <div className="relative">
+            <Image
+              src={eggs}
+              alt="Eggs"
+              className="w-24 lg:w-32 object-contain"
+            />
+            <div className="absolute -top-4 -right-6">
+              <div className="w-24 lg:w-32 h-24 lg:h-32 bg-yellow-400 rounded-full flex items-center justify-center border-4 border-white shadow-xl animate-spin-slow">
+                <Image src={learn} alt="Learn More" />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

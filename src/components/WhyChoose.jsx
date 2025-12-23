@@ -6,6 +6,7 @@ import image2 from "../app/assets/whychoose/2.jpeg";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import AnimatedHeading from "./AnimatedHeading";
+import ScrollAnimations from "./ScrollAnimations";
 
 export default function WhyChoose() {
   const router = useRouter();
@@ -13,6 +14,8 @@ export default function WhyChoose() {
   const chars = text.split("");
 
   return (
+    <><ScrollAnimations />
+
     <section className="bg-[#fff5df]">
       {/* TOP CONTENT */}
       <div className="max-w-7xl mx-auto px-6 py-20">
@@ -60,14 +63,15 @@ export default function WhyChoose() {
 
         {/* ROW 1 */}
         <div className="grid lg:grid-cols-2 gap-14 items-center mb-24">
-          <div className="relative w-full h-[260px] md:h-[340px] rounded-2xl overflow-hidden shadow-md">
-            <Image
-              src={image1}
-              alt="Free range hens"
-              fill
-              className="object-cover"
-            />
-          </div>
+          <div className="relative w-full h-[260px] md:h-[340px] rounded-2xl overflow-hidden shadow-md  animate-on-scroll">
+  <Image
+    src={image1}
+    alt="Free range hens"
+    fill
+    className="object-cover"
+  />
+</div>
+
 
           <div>
             <AnimatedHeading
@@ -152,14 +156,15 @@ export default function WhyChoose() {
             </motion.p>
           </div>
 
-          <div className="relative w-full h-[260px] md:h-[340px] rounded-2xl overflow-hidden shadow-md order-1 lg:order-2">
-            <Image
-              src={image2}
-              alt="Fresh eggs basket"
-              fill
-              className="object-cover"
-            />
-          </div>
+          <div className="relative w-full h-[260px] md:h-[340px] rounded-2xl overflow-hidden shadow-md order-1 lg:order-2  animate-on-scroll">
+  <Image
+    src={image2}
+    alt="Fresh eggs basket"
+    fill
+    className="object-cover"
+  />
+</div>
+
         </div>
       </div>
 
@@ -246,5 +251,6 @@ export default function WhyChoose() {
         </div>
       </div>
     </section>
+    </>
   );
 }

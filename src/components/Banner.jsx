@@ -1,7 +1,6 @@
-"use client";
-import Image from "next/image";
-import React from "react";
-// import bannerEgg from "@/public/assets/bannerEgg.jpeg";
+'use client'
+import React from 'react'
+import Image from 'next/image'
 
 const Banner = () => {
   const items = [
@@ -12,7 +11,7 @@ const Banner = () => {
     "100% Natural",
     "Organic Feed",
     "Free Range",
-    "Premium Quality",
+    "Premium Quality"
   ];
 
   return (
@@ -33,42 +32,44 @@ const Banner = () => {
       `}</style>
 
       <div className="flex animate-scroll whitespace-nowrap">
-        {/* First set of items */}
+        {/* First set */}
         {items.map((item, index) => (
-          <div key={`first-${index}`} className="flex items-center px-8">
-            <span className="text-black font-bold text-lg md:text-2xl">
+          <div key={`first-${index}`} className="flex items-center px-8 gap-6">
+            <span className="text-black font-bold text-lg md:text-xl">
               {item}
             </span>
-            <div className="ml-8 flex items-center">
-              <Image
-                src="/banner/bannerEgg.jpeg"
-                width={20}
-                height={20}
-                alt="banner egg"
-              />
-            </div>
+
+            {/* Egg Image */}
+            <Image
+              src="/banner/eggs.png"
+              alt="Egg icon"
+              width={24}
+              height={24}
+              className="object-contain"
+            />
           </div>
         ))}
 
         {/* Duplicate set for seamless loop */}
         {items.map((item, index) => (
-          <div key={`second-${index}`} className="flex items-center px-8">
-            <span className="text-black font-bold text-lg md:text-2xl">
+          <div key={`second-${index}`} className="flex items-center px-8 gap-6">
+            <span className="text-black font-bold text-lg md:text-xl">
               {item}
             </span>
-            <div className="ml-8 flex items-center">
-              <Image
-                src="/banner/bannerEgg.jpeg"
-                width={20}
-                height={20}
-                alt="banner egg"
-              />
-            </div>
+
+            {/* Egg Image */}
+            <Image
+              src="/banner/eggs.png"
+              alt="Egg icon"
+              width={24}
+              height={24}
+              className="object-contain"
+            />
           </div>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner
