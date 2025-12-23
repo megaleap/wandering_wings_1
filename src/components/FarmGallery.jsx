@@ -8,6 +8,7 @@ import img1 from "@/app/assets/gallery/1.png";
 import img2 from "@/app/assets/gallery/2.jpeg";
 import img3 from "@/app/assets/gallery/3.jpeg";
 import img4 from "@/app/assets/gallery/4.jpeg";
+import AnimatedHeading from "./AnimatedHeading";
 
 const galleryImages = [img1, img2, img3, img4];
 
@@ -23,9 +24,13 @@ export default function FarmGallery() {
         </span>
 
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-[#3B2414] mb-12">
+        <AnimatedHeading
+          className="text-3xl md:text-4xl font-bold text-[#3B2414] mb-12"
+          text="
           Our Farm gallery
-        </h2>
+        
+        "
+        />
 
         {/* Gallery */}
         <div className="flex flex-wrap justify-center gap-10 mb-12">
@@ -78,12 +83,10 @@ export default function FarmGallery() {
             ease: [0.22, 1, 0.36, 1],
           }}
           className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 transition text-black font-semibold px-6 py-3 rounded-xl"
-        onClick={() => router.push('/gallery')}
+          onClick={() => router.push("/gallery")}
         >
           View All
-          <span
-            className="w-7 h-7 rounded bg-white flex items-center justify-center group-hover:bg-yellow-400 transition-colors duration-300"
-          >
+          <span className="w-7 h-7 rounded bg-white flex items-center justify-center group-hover:bg-yellow-400 transition-colors duration-300">
             <ArrowRight size={16} className="text-black" />
           </span>
         </motion.button>

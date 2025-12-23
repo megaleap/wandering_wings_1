@@ -46,7 +46,7 @@ const testimonials = [
     ],
     text: "Our kitchen quality improved dramatically after switching to Wandering Wings. The consistency, taste, and freshness make a real difference in every dish we serve.",
     image: "/testimonials/2.png",
-    image1: test2,
+    image1: test3,
   },
 
   {
@@ -75,7 +75,7 @@ export default function Testimonials() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
-    }, 3000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
@@ -96,69 +96,72 @@ export default function Testimonials() {
       <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
         <div className=" overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.div
-              className=" min-h-[110px]"
-              key={index}
-              initial={{ x: 80, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -60, opacity: 0 }}
-              transition={{
-                duration: 1.6,
-                ease: [0.22, 1, 0.36, 1], // smooth premium easing
-              }}
-            >
-              <p className="text-yellow-400 text-md tracking-widest mb-3">
-                ✦<span className="text-white font-bold"> OUR FUN FACTS</span>
-              </p>
-
-              {/* <h2 className="text-3xl md:text-4xl ">
+          <p className="text-yellow-400 text-md tracking-widest mb-3">
+            ✦<span className="text-white font-bold"> OUR FUN FACTS</span>
+          </p>
+          <div >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                className="min-h-[110px]"
+                initial={{ x: "100%" }} // 👉 start outside right
+                animate={{ x: "0%" }} // ✅ center
+                exit={{ x: "-100%" }} // 👈 exit fully left
+                transition={{
+                  duration: 2.4,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                {/* <h2 className="text-3xl md:text-4xl ">
               Real feedback from families & kitchens we proudly serve
             </h2> */}
-              <div className="min-h-[100px] md:min-h-[100px] mb-4">
-                <h2 className="text-3xl md:text-4xl font-bold ">{t.heading}</h2>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+                <div className="min-h-[100px] md:min-h-[100px] mb-4">
+                  <h2 className="text-3xl md:text-4xl font-bold ">
+                    {t.heading}
+                  </h2>
+                </div>
 
-          {/* Stars */}
-          <div className="flex gap-1 mb-4">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <span key={i} className="text-yellow-400 text-lg">
-                ★
-              </span>
-            ))}
+                {/* Stars */}
+
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">
+                      ★
+                    </span>
+                  ))}
+                </div>
+
+                {/* Text */}
+                <div className="min-h-[140px] md:min-h-[160px] mb-4">
+                  <p className="text-white/80 leading-relaxed">{t.text}</p>
+                  <hr className="mt-10" />
+                </div>
+
+                {/* Fun Facts / Points */}
+                {t.title && t.points && (
+                  <div className="mb-8 bg-white/10 border border-white/20 rounded-2xl p-6">
+                    <span className="block text-yellow-400 font-semibold mb-4">
+                      {t.title}
+                    </span>
+
+                    <ul className="space-y-2">
+                      {t.points.map((point, i) => (
+                        <li
+                          key={i}
+                          className="text-white/90 text-sm flex items-start gap-2"
+                        >
+                          <span className="text-yellow-400 mt-[2px]">✔</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Author + Controls */}
+              </motion.div>
+            </AnimatePresence>
           </div>
-
-          {/* Text */}
-          <div className="min-h-[140px] md:min-h-[160px] mb-4">
-            <p className="text-white/80 leading-relaxed">{t.text}</p>
-            <hr className="mt-10" />
-          </div>
-
-          {/* Fun Facts / Points */}
-          {t.title && t.points && (
-            <div className="mb-8 bg-white/10 border border-white/20 rounded-2xl p-6">
-              <span className="block text-yellow-400 font-semibold mb-4">
-                {t.title}
-              </span>
-
-              <ul className="space-y-2">
-                {t.points.map((point, i) => (
-                  <li
-                    key={i}
-                    className="text-white/90 text-sm flex items-start gap-2"
-                  >
-                    <span className="text-yellow-400 mt-[2px]">✔</span>
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Author + Controls */}
-
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
               <Image
@@ -229,12 +232,12 @@ export default function Testimonials() {
                   className="w-9 h-9 rounded-full border-1 border-black object-cover"
                 />
                 <img
-                  src="/testimonials/3.png"
+                  src="/testimonials/5.png"
                   alt="User 3"
                   className="w-9 h-9 rounded-full border-1 border-black object-cover"
                 />
                 <img
-                  src="/testimonials/1.png"
+                  src="/testimonials/4.png"
                   alt="User 4"
                   className="w-9 h-9 rounded-full border-1 border-black object-cover"
                 />

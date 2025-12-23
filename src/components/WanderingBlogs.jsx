@@ -8,6 +8,7 @@ import blog2 from "../app/assets/blogs/image2.png";
 import blog3 from "../app/assets/blogs/image5.jpeg";
 import { motion } from "framer-motion";
 import { ArrowBigRight, ArrowRight } from "lucide-react";
+import AnimatedHeading from "./AnimatedHeading";
 
 const blogs = [
   {
@@ -37,9 +38,14 @@ export default function WanderingBlogs() {
             <p className="text-sm font-semibold tracking-widest text-[#6b4b32] mb-2 flex items-center gap-2">
               <span className="text-[#FED525]">✦</span> OUR BLOGS
             </p>
-            <h2 className="text-[32px] md:text-[40px] font-serif text-[#3A2417] leading-tight font-extrabold">
+
+            <AnimatedHeading
+              className="text-3xl md:text-4xl font-bold leading-tight mb-4"
+              text={`From Our Wandering Blogs`}
+            />
+            {/* <h2 className="text-[32px] md:text-[40px] font-serif text-[#3A2417] leading-tight font-extrabold">
               From Our Wandering <br /> Blogs
-            </h2>
+            </h2> */}
           </div>
 
           <button className="group  self-start md:self-auto bg-[#FFD21F] text-[#3A2417] font-semibold px-6 py-3 rounded flex items-center gap-2 transition hover:bg-white cursor-pointer">
@@ -81,15 +87,18 @@ export default function WanderingBlogs() {
                 {/* Diagonal White Overlay */}
                 <span
                   className="
-                  absolute
-                  inset-0
-                  bg-white/40
-                  rotate-[-35deg]
-                  scale-0
-                  origin-center
-                  transition-transform duration-700 ease-out
-                  group-hover:scale-150
-                 "
+    absolute inset-0
+    bg-white/40
+    rotate-[-35deg]
+    scale-0
+    opacity-100
+    origin-center
+    transition-all duration-700 ease-out
+    group-hover:scale-150
+    group-hover:opacity-0
+    delay-200
+    pointer-events-none
+  "
                 />
               </div>
 

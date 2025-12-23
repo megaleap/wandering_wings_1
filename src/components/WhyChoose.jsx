@@ -80,8 +80,8 @@ export default function WhyChoose() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-120px" }}
               transition={{
-                duration: 0.6,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 2.8,
+                ease: [0.25, 0.8, 0.25, 1],
               }}
               className="text-[#6b4a2f] leading-relaxed mb-6 text-sm md:text-base"
             >
@@ -96,7 +96,7 @@ export default function WhyChoose() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-120px" }}
               transition={{
-                duration: 0.6,
+                duration: 2.8,
                 delay: 0.15,
                 ease: [0.22, 1, 0.36, 1],
               }}
@@ -141,8 +141,8 @@ export default function WhyChoose() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-120px" }}
               transition={{
-                duration: 0.6,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 2.8,
+                ease: [0.25, 0.8, 0.25, 1],
               }}
               className="text-[#6b4a2f] leading-relaxed text-sm md:text-base"
             >

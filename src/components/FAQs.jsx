@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import faq from "../app/assets/FAQ.png";
 import { motion } from "framer-motion";
+import AnimatedHeading from "./AnimatedHeading";
 
 const faqs = [
   {
@@ -63,13 +64,20 @@ export default function FAQs() {
         <div className="text-white">
           <p className="text-sm tracking-widest text-yellow-400 mb-3">
             ✦
-            <span className="text-white font-bold"> FREQUENTLY ASKED QUESTIONS</span>
+            <span className="text-white font-bold">
+              {" "}
+              FREQUENTLY ASKED QUESTIONS
+            </span>
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
-            Everything you need to <br /> know about our <br />
-            free-range eggs
-          </h2>
+          <AnimatedHeading
+            className="text-3xl md:text-4xl font-bold leading-tight mb-4"
+            text={`Everything you need to know        about our free-range eggs`}
+          />
+          {/* <AnimatedHeading
+            className="text-3xl md:text-4xl font-bold leading-tight mb-4"
+            text={`about our free-range eggs`}
+          /> */}
 
           <motion.p
             initial={{ opacity: 0, y: 40 }}
@@ -90,13 +98,13 @@ export default function FAQs() {
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-120px" }}
-            transition={{
-              duration: 0.6,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-120px" }}
+                transition={{
+                  duration: 0.6,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 key={index}
                 className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden"
               >

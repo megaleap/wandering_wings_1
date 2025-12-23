@@ -19,7 +19,7 @@ import image14 from "../app/assets/kitchen/14.jpg";
 import image15 from "../app/assets/kitchen/15.png";
 import image16 from "../app/assets/kitchen/16.png";
 import { motion } from "framer-motion";
-
+import AnimatedHeading from "./AnimatedHeading";
 
 const recipes = [
   { title: "The Perfect start to your day", image: image2 },
@@ -44,19 +44,41 @@ export default function WanderingKitchen() {
   return (
     <section className="py-[70px] bg-[#FAF7F2] overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-5">
-
         {/* Heading (RESTORED STYLE) */}
-        <h2 className="text-center  text-[32px] text-[#322119] leading-tight mb-1 font-extrabold">
-          The Wandering Kitchen
-        </h2>
+        {/* <AnimatedHeading
+          className="text-3xl md:text-4xl font-bold leading-tight mb-4"
+          text={`From Our Wandering Blogs`}
+        /> */}
+        <AnimatedHeading
+          className="text-center  text-3xl md:text-4xl text-[#322119] leading-tight mb-1 font-extrabold"
+          text={`The Wandering Kitchen`}
+        />
 
-        <p className="text-center text-[22px] text-[#5A4228] mb-2 font-semibold">
+        <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{
+              duration: 2.6,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+        
+        className="text-center text-[22px] text-[#5A4228] mb-2 font-semibold">
           Delicious recipes made with real free-range eggs
-        </p>
+        </motion.p>
 
-        <p className="text-center text-[16px] text-[#4b3f34] mb-8">
+        <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{
+              duration: 2.6,
+              ease: [0.22, 1, 0.36, 1],
+            }} 
+        
+        className="text-center text-[16px] text-[#4b3f34] mb-8">
           Inspired Plates, The Wandering Wings Way
-        </p>
+        </motion.p>
 
         {/* Auto Scrolling Carousel */}
         <div className="relative overflow-hidden">
@@ -88,7 +110,6 @@ export default function WanderingKitchen() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

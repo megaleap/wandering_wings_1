@@ -7,6 +7,7 @@ import pack2 from "../app/assets/eggPacks/12.jpg";
 import pack3 from "../app/assets/eggPacks/30packs.jpeg";
 import pack4 from "../app/assets/eggPacks/120pack.jpg";
 import pack5 from "../app/assets/eggPacks/300pack.jpg";
+import AnimatedHeading from "./AnimatedHeading";
 
 const products = [
   {
@@ -43,12 +44,15 @@ export default function EggPacks() {
         {/* Header */}
         <div className="text-center mb-14">
           <p className="text-yellow-500 tracking-widest text-md font-semibold mb-3">
-            ✦ 
-            <span className="text-[#3b2615] font-bold"> OUR PRODUCTS</span>
+            ✦<span className="text-[#3b2615] font-bold"> OUR PRODUCTS</span>
           </p>
-          <h2 className="text-3xl md:text-4xl  text-[#3b2615] font-extrabold">
+          <AnimatedHeading
+            className="text-3xl md:text-4xl  text-[#3b2615] font-extrabold"
+            text=" 
             Our Free-Range Egg Packs
-          </h2>
+          
+          "
+          />
         </div>
 
         {/* Grid */}
