@@ -60,6 +60,7 @@ const OurBenefits = () => {
           {/* LEFT STACK */}
           <div className="flex flex-col gap-6 w-full">
             {/* Image 1 */}
+            
             <div className="relative h-[420px] rounded-2xl overflow-hidden image-hidden animate-on-scroll">
               <Image
                 src="/ourbenifits/DSC03865.JPG"
