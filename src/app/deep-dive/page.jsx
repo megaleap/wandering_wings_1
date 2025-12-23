@@ -11,6 +11,7 @@ import img2 from "../assets/deepdrive/image2.jpg";
 import img3 from "../assets/deepdrive/image3.jpeg";
 import img4 from "../assets/deepdrive/image4.jpeg";
 import AnimatedHeading from "@/components/AnimatedHeading";
+import Banner from "@/components/Banner";
 
 const Page = () => {
   return (
@@ -53,7 +54,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-
+      <Banner/>
       {/* ================= WAY SECTION ================= */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <AnimatedHeading
