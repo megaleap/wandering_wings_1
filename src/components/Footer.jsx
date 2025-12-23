@@ -1,16 +1,27 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import { Phone, MapPin, Mail, Send, Twitter, Linkedin } from "lucide-react";
+import {
+  Phone,
+  MapPin,
+  Mail,
+  Send,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
 import Image from "next/image";
 import wander from "../app/assets/Wandiring.svg";
+
 // import TwitterXIcon from "@/components/icons/TwitterXIcon";
 import TwitterXIcon from "./TwitterXIcon";
+import { useRouter } from "next/navigation";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const validateEmail = (email) => {
     return /^\S+@\S+\.\S+$/.test(email);
@@ -154,6 +165,23 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-200">
           <p>Copyright © 2025 All Rights Reserved.</p>
 
+          <p className="flex gap-2">
+            Designed & Developed by{" "}
+            {/* <img
+              src="/favicon.svg"
+              alt="logo"
+              className="w-4 h-4  object-cover"
+            /> */}
+            <a
+              href="https://www.megaleap.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              megaleap.ai
+            </a>
+          </p>
+
           <div className="flex gap-4">
             <a
               href="https://x.com"
@@ -163,7 +191,6 @@ const Footer = () => {
             >
               <TwitterXIcon size={16} />
             </a>
-
             <a
               href="https://linkedin.com"
               target="_blank"
@@ -171,6 +198,14 @@ const Footer = () => {
               className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 transition"
             >
               <Linkedin size={16} />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 transition"
+            >
+              <Instagram size={16} />
             </a>
           </div>
         </div>

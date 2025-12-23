@@ -82,7 +82,7 @@ export default function FarmGallery() {
             duration: 0.6,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 transition text-black font-semibold px-6 py-3 rounded-xl"
+          className="group inline-flex items-center gap-3 bg-yellow-400  transition text-black font-semibold px-6 py-3 rounded-xl hover:bg-white cursor-pointer"
           onClick={() => router.push("/gallery")}
         >
           View All
