@@ -40,9 +40,9 @@ export default function WhyChoose() {
                   },
                 }}
                 transition={{
-                  duration: 0.6,
+                  duration: 0.2,
                   ease: [0.25, 0.8, 0.25, 1], // 🌊 smooth tide
-                  delay: i * 0.045, // 👉 left → right wave
+                  delay: i * 0.025, // 👉 left → right wave
                 }}
                 className="inline-block"
               >
