@@ -1,5 +1,7 @@
-'use client'
-import React from 'react'
+"use client";
+import Image from "next/image";
+import React from "react";
+// import bannerEgg from "@/public/assets/bannerEgg.jpeg";
 
 const Banner = () => {
   const items = [
@@ -10,7 +12,7 @@ const Banner = () => {
     "100% Natural",
     "Organic Feed",
     "Free Range",
-    "Premium Quality"
+    "Premium Quality",
   ];
 
   return (
@@ -37,22 +39,36 @@ const Banner = () => {
             <span className="text-black font-bold text-lg md:text-2xl">
               {item}
             </span>
-            <span className="ml-8 text-black text-2xl">✦</span>
+            <div className="ml-8 flex items-center">
+              <Image
+                src="/banner/bannerEgg.jpeg"
+                width={20}
+                height={20}
+                alt="banner egg"
+              />
+            </div>
           </div>
         ))}
-        
+
         {/* Duplicate set for seamless loop */}
         {items.map((item, index) => (
           <div key={`second-${index}`} className="flex items-center px-8">
             <span className="text-black font-bold text-lg md:text-2xl">
               {item}
             </span>
-            <span className="ml-8 text-black text-2xl">✦</span>
+            <div className="ml-8 flex items-center">
+              <Image
+                src="/banner/bannerEgg.jpeg"
+                width={20}
+                height={20}
+                alt="banner egg"
+              />
+            </div>
           </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;

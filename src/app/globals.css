@@ -145,9 +145,17 @@ body {
   }
 }
 
+/* Initial hidden state */
+.image-hidden {
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+}
+
+/* Animation only when class is added */
 .animate-image-reveal {
   animation: imageReveal 0.9s ease-out forwards;
 }
+
 
 .animate-content-rise {
   animation: contentRise 0.8s ease-out forwards;
