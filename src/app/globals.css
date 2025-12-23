@@ -191,7 +191,7 @@ body {
 }
 
 .animate-spin-slow {
-  animation: spinSlow 4s linear infinite;
+  animation: spinSlow 8s linear infinite;
 }
 
 /* Fade + slide from left */

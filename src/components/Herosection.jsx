@@ -6,6 +6,7 @@ import customer1 from "../app/assets/Ellipse 754.png";
 import customer2 from "../app/assets/Ellipse 744.png";
 import customer3 from "../app/assets/Ellipse 746.png";
 import customer4 from "../app/assets/Ellipse 747.png";
+import { ArrowRight } from "lucide-react";
 
 // import video from '../app/assets/WhatsApp Video 2025-11-28 at 12.47.56.mp4'
 import Image from "next/image";
@@ -49,7 +50,7 @@ const Herosection = () => {
 
   return (
     <>
-      <div className="relative  h-full -mt-28 pt-28 pt-20 overflow-hidden">
+      <div className="relative  h-full  pt-16 overflow-hidden">
         {/* Custom Styles */}
 
         {/* Video Background */}
@@ -74,7 +75,7 @@ const Herosection = () => {
             {/* Top Tagline */}
             <div className="relative z-10 flex flex-col justify-center h-full px-6 md:px-12 lg:px-10 max-w-5xl my-20">
               <p className="text-white text-sm md:text-base lg:text-lg font-medium tracking-wider mb-4 md:mb-6">
-                Real Eggs. Real Nutrition. Real Health
+                <span className="text-yellow-500"> ✦</span>Real Eggs. Real Nutrition. Real Health
               </p>
 
               {/* Main Heading */}
@@ -110,9 +111,11 @@ const Herosection = () => {
               {/* Bottom Section with CTA and Social Proof */}
               <div className="flex mb-10 flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-8">
                 {/* CTA Button */}
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-base md:text-lg px-8 py-4 rounded-lg flex items-center gap-3 transition-all duration-300 shadow-lg">
+                <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-base md:text-lg px-8 py-1.5 rounded-lg flex items-center gap-3 transition-all duration-300 shadow-lg">
                   Explore Our Farm
-                  <span className="text-xl">→</span>
+                  <span className="w-10 h-10 rounded bg-white flex items-center justify-center">
+            <ArrowRight size={16} />
+          </span>
                 </button>
 
                 {/* Social Proof */}
