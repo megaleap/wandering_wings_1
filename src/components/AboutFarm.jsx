@@ -148,7 +148,7 @@ export default function AboutFarm() {
             {/* Stats */}
             <div
               className={`grid grid-cols-2 sm:grid-cols-4 gap-4 ${
-                isVisible ? "animate-slide-up delay-4" : "opacity-0"
+                isVisible ? "animate-slide-up delay-2" : "opacity-0"
               }`}
             >
               {[

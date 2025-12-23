@@ -114,13 +114,15 @@ body {
 }
 
 .animate-slide-up {
-  animation: slideUp 0.8s ease-out forwards;
+  animation: slideUp 0.999s ease-out forwards;
 }
 
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
+/* .delay-8 { animation-delay: 0.2s; } */
+
 
 
 @keyframes imageReveal {

@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import AnimatedHeading from './AnimatedHeading'
 // import hen1 from '../app/assets/oureggs/DSC03821.JPG'
 // import hen2 from '../app/assets/oureggs/DSC04189.JPG'
 // import hen3 from '../app/assets/oureggs/DSC04692.JPG'
@@ -43,49 +44,48 @@ const items = [
 
 const OurEggs = () => {
   const sectionRef = useRef(null)
-  const [visibleItems, setVisibleItems] = useState([]);
+  const [visibleItems, setVisibleItems] = useState([])
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = Number(entry.target.dataset.index);
-          // Only add if not already visible
-          setVisibleItems((prev) => {
-            if (!prev.includes(index)) return [...prev, index];
-            return prev;
-          });
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.dataset.index)
+            setVisibleItems((prev) =>
+              prev.includes(index) ? prev : [...prev, index]
+            )
+          }
+        })
+      },
+      { threshold: 0.25 }
+    )
 
-  const elements = document.querySelectorAll('.animate-on-scroll');
-  elements.forEach((el) => observer.observe(el));
+    const elements = sectionRef.current.querySelectorAll('.animate-on-scroll')
+    elements.forEach((el) => observer.observe(el))
 
-  return () => observer.disconnect();
-}, []);
-
-
-
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section
       ref={sectionRef}
       className="bg-[#3b2518] text-white py-20 px-6 md:px-12"
     >
-      {/* Heading */}
+      {/* ================= HEADING ================= */}
       <div className="text-center max-w-3xl mx-auto mb-16">
         <p className="text-lg tracking-widest text-white mb-3">
-          <span className="text-yellow-500">✦</span>OUR EGGS
+          <span className="text-yellow-500">✦</span> OUR EGGS
         </p>
-        <h2 className="text-3xl md:text-5xl font-bold">
-          Our Eggs – Pure, Nutritious <br /> & Naturally Better
-        </h2>
+
+        <AnimatedHeading
+          text="Our Eggs – Pure, Nutritious & Naturally Better"
+          className="text-3xl md:text-5xl font-bold"
+        />
+
         <p className="text-lg text-white/70 mt-4">
-          Every egg we produce reflects natural living, open pastures, and clean, honest farming.
+          Every egg we produce reflects natural living, open pastures, and clean,
+          honest farming.
         </p>
       </div>
 
@@ -131,12 +131,12 @@ useEffect(() => {
       </div>
 
       {/* Footer */}
-      <p className="text-center text-xs text-white/70 mt-16">
+      {/* <p className="text-center text-xs text-white/70 mt-16">
         Let’s make something great work together.{' '}
         <span className="text-yellow-400 underline cursor-pointer">
           Get Free Quote
         </span>
-      </p>
+      </p> */}
     </section>
   )
 }

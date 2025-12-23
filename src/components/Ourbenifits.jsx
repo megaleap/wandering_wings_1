@@ -8,8 +8,13 @@ import customer1 from "../app/assets/Ellipse 754.png";
 import customer2 from "../app/assets/Ellipse 744.png";
 import customer3 from "../app/assets/Ellipse 746.png";
 import customer4 from "../app/assets/Ellipse 747.png";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+// import { useRouter } from "next/router";
 
 const OurBenefits = () => {
+  const router = useRouter();
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -63,7 +68,25 @@ const OurBenefits = () => {
                 className="object-cover"
                 priority
               />
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-[#b08b55] rounded-full opacity-90" />
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-6 rounded-full opacity-100" >
+              <motion.button
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-120px" }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 transition text-black text-sm font-extrabold px-5 py-1.5 rounded-xl shadow"
+          onClick={() => router.push("/contact")}
+        >
+          Contact Us
+          <span className="w-10 h-10 rounded bg-white flex items-center justify-center">
+            <ArrowRight size={16} />
+          </span>
+        </motion.button>
+              </div>
             </div>
 
             {/* Trusted Clients */}
@@ -169,7 +192,7 @@ function BenefitCard({ visible, delay, icon, title, text }) {
     >
       <div className="absolute inset-0 bg-yellow-400 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-0" />
       <div className="relative z-10 flex items-start gap-4">
-        <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-white group-hover:text-black">
+        <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-white group-hover:text-black group-hover:bg-white">
           {icon}
         </div>
         <div>
