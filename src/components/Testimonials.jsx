@@ -7,6 +7,9 @@ import hens from "../app/assets/hens1.jpg";
 import test1 from "../app/assets/Ellipse 744.png";
 import test2 from "../app/assets/Ellipse 746.png";
 import test3 from "../app/assets/Ellipse 747.png";
+import test5 from "../app/assets/test5.png";
+import test6 from "../app/assets/test6.png";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
@@ -28,7 +31,7 @@ const testimonials = [
     text: "You need consistency, flavour and colour you can depend on — every single day. Our golden-yolk eggs deliver richer taste, stronger structure and clean aroma, making them perfect for baking, plating and every high-performance kitchen.",
 
     image: "/testimonials/1.png",
-    image1: test1,
+    image1: test5,
   },
 
   {
@@ -64,7 +67,7 @@ const testimonials = [
     ],
     text: "Knowing where my food comes from matters. These eggs are clean, ethical, and taste absolutely amazing. I’ll never go back to regular eggs.",
     image: "/testimonials/3.png",
-    image1: test3,
+    image1: test6,
   },
 ];
 

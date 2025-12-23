@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import wander from "../app/assets/Wandiring.svg";
+import logo1 from "../app/assets/logo1.jpeg";
+
 
 // import TwitterXIcon from "@/components/icons/TwitterXIcon";
 import TwitterXIcon from "./TwitterXIcon";
@@ -66,8 +68,10 @@ const Footer = () => {
       >
         {/* Logo & Contact */}
         <div>
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-2 mb-4 justify-between">
             <Image src={wander} className="h-20" alt="logo" />
+            <Image src={logo1} className="h-20 w-20" alt="logo" />
+
           </div>
 
           <p className="text-sm mb-6 text-gray-200">

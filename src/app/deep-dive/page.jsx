@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 // replace these with your actual images
 import heroImg from "../assets/deepdrive/image.png";
@@ -9,13 +10,14 @@ import img1 from "../assets/deepdrive/image1.png";
 import img2 from "../assets/deepdrive/image2.jpg";
 import img3 from "../assets/deepdrive/image3.jpeg";
 import img4 from "../assets/deepdrive/image4.jpeg";
+import AnimatedHeading from "@/components/AnimatedHeading";
 
 const Page = () => {
   return (
     <main className="bg-[#fff5df] border border-white/60">
       {/* ================= HERO ================= */}
-      <section className="max-w-7xl mx-auto px-6 pt-12">
-        <div className="relative rounded-3xl overflow-hidden min-h-[260px] md:min-h-[500px]">
+      <section className="w-full mx-auto">
+        <div className="relative  overflow-hidden min-h-[260px] md:min-h-[530px] mt-28">
           {/* Background Image */}
           <Image
             src={heroImg}
@@ -30,27 +32,49 @@ const Page = () => {
 
           {/* Bottom Text */}
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-10">
-            <h1 className="text-white text-2xl md:text-4xl font-bold mb-2 leading-tight">
-              Wandric, your guide to happy eggs!
-            </h1>
-            <p className="text-white/90 text-sm md:text-base max-w-2xl">
-              Discover the journey of our pasture-raised eggs, from our happy
-              hens to your healthy home.
-            </p>
+            <AnimatedHeading
+              text="Wandric, your guide to happy eggs!
+"
+              className="text-white text-2xl md:text-4xl font-bold mb-2 leading-tight text-center"
+            />
+            {/* <h1 className="text-white text-2xl md:text-4xl font-bold mb-2 leading-tight text-center"></h1> */}
+            <AnimatedHeading
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-120px" }}
+              transition={{
+                duration: 2.8,
+                ease: [0.25, 0.8, 0.25, 1],
+              }}
+              className="text-white/90 text-sm md:text-base  text-center"
+              text="Discover the journey of our pasture-raised eggs, from our happy
+              hens to your healthy home."
+            />
           </div>
         </div>
       </section>
 
       {/* ================= WAY SECTION ================= */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#3b2615] mb-3">
-          The Wandering Wings Way
-        </h2>
-        <p className="text-[#6b4a2f] max-w-2xl mb-10">
+        <AnimatedHeading
+          className="text-2xl md:text-3xl font-bold text-[#3b2615] mb-3"
+          text="The Wandering Wings Way"
+        />
+
+        <motion.p
+          className="text-[#6b4a2f] max-w-2xl mb-10"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-120px" }}
+          transition={{
+            duration: 2.8,
+            ease: [0.25, 0.8, 0.25, 1],
+          }}
+        >
           Wandric and her friends roam freely on open pastures, enjoying a
           natural diet that makes for healthier, tastier eggs. It’s a simple
           philosophy: happy hens lay the best eggs.
-        </p>
+        </motion.p>
 
         {/* Feature Cards */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -68,9 +92,16 @@ const Page = () => {
               desc: "Basking in natural sunlight provides Vitamin D, which they pass on to their eggs.",
             },
           ].map((item, i) => (
-            <div
+            <motion.div
               key={i}
               className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-120px" }}
+              transition={{
+                duration: 2.8,
+                ease: [0.25, 0.8, 0.25, 1],
+              }}
             >
               <h3 className="font-semibold text-[#3b2615] mb-2">
                 {item.title}
@@ -78,16 +109,17 @@ const Page = () => {
               <p className="text-sm text-[#6b4a2f] leading-relaxed">
                 {item.desc}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* ================= PASTURE EGGS ================= */}
       <section className="max-w-7xl mx-auto px-6 pb-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#3b2615] mb-8">
-          What Are Pasture-Raised Eggs?
-        </h2>
+        <AnimatedHeading
+          className="text-2xl md:text-3xl font-bold text-[#3b2615] mb-8"
+          text={"What Are Pasture-Raised Eggs?"}
+        />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {[
@@ -112,7 +144,17 @@ const Page = () => {
               text: "Our hens live outdoors on fresh pasture.",
             },
           ].map((item, i) => (
-            <div key={i} className="text-center">
+            <motion.div
+              key={i}
+              className="text-center"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-120px" }}
+              transition={{
+                duration: 2.8,
+                ease: [0.25, 0.8, 0.25, 1],
+              }}
+            >
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden mb-3">
                 <Image
                   src={item.img}
@@ -123,7 +165,7 @@ const Page = () => {
               </div>
               <h4 className="font-semibold text-[#3b2615]">{item.label}</h4>
               <p className="text-xs text-[#6b4a2f] mt-1">{item.text}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -131,13 +173,23 @@ const Page = () => {
       {/* ================= NUTRITION SECTION ================= */}
       <section className="max-w-5xl mx-auto px-6 mt-20">
         <div className="bg-white rounded-3xl p-10 md:p-14 text-center">
-          <h2 className="text-xl md:text-2xl font-bold text-[#3b2615] mb-2">
-            More Than Just a Pretty Yolk
-          </h2>
-          <p className="text-sm text-[#6b4a2f] mb-10">
+          <AnimatedHeading
+            className="text-xl md:text-2xl font-bold text-[#3b2615] mb-2"
+            text="More Than Just a Pretty Yolk"
+          />
+          <motion.p
+            className="text-sm text-[#6b4a2f] mb-10"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{
+              duration: 2.8,
+              ease: [0.25, 0.8, 0.25, 1],
+            }}
+          >
             Pasture-raised eggs aren’t just tastier, they’re packed with more of
             the good stuff.
-          </p>
+          </motion.p>
 
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
             {[
@@ -154,9 +206,16 @@ const Page = () => {
                 desc: "Powerful antioxidants that support vision and skin health.",
               },
             ].map((item, i) => (
-              <div
+              <motion.div
                 key={i}
                 className="bg-[#fff5df] rounded-2xl p-6 flex flex-col items-center"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-120px" }}
+                transition={{
+                  duration: 2.8,
+                  ease: [0.25, 0.8, 0.25, 1],
+                }}
               >
                 <div className="w-12 h-12 rounded-full bg-[#fde9a9] mb-4" />
                 <h3 className="font-semibold text-[#3b2615] mb-1">
@@ -165,7 +224,7 @@ const Page = () => {
                 <p className="text-xs text-[#6b4a2f] leading-relaxed">
                   {item.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -174,13 +233,23 @@ const Page = () => {
       {/* ================= DELIVERY SECTION ================= */}
       <section className="max-w-6xl mx-auto px-6 mt-16 mb-24 bg-[#fff5df]">
         <div className="bg-[#fdeeb8] rounded-3xl p-10 md:p-14 text-center">
-          <h2 className="text-xl md:text-2xl font-bold text-[#3b2615] mb-2">
-            Ready for Farm-Fresh Goodness?
-          </h2>
-          <p className="text-sm text-[#6b4a2f] mb-10">
+          <AnimatedHeading
+            className="text-xl md:text-2xl font-bold text-[#3b2615] mb-2"
+            text="Ready for Farm-Fresh Goodness?"
+          />
+          <motion.p
+            className="text-sm text-[#6b4a2f] mb-10"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{
+              duration: 2.8,
+              ease: [0.25, 0.8, 0.25, 1],
+            }}
+          >
             Get Wandering Wings eggs delivered right to your door. Freshness
             guaranteed.
-          </p>
+          </motion.p>
 
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
             {[
@@ -201,14 +270,24 @@ const Page = () => {
                 desc: "From our farm to you.",
               },
             ].map((item, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 text-left">
+              <motion.div
+                key={i}
+                className="bg-white rounded-2xl p-6 text-left"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-120px" }}
+                transition={{
+                  duration: 2.8,
+                  ease: [0.25, 0.8, 0.25, 1],
+                }}
+              >
                 <h3 className="font-semibold text-[#3b2615] mb-1 text-sm">
                   {item.title}
                 </h3>
                 <p className="text-xs text-[#6b4a2f] leading-relaxed">
                   {item.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
