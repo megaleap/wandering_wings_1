@@ -63,7 +63,7 @@ const Banner = () => {
               alt="Egg icon"
               width={24}
               height={24}
-              className="object-contain"
+              className="object-contain" 
             />
           </div>
         ))}
