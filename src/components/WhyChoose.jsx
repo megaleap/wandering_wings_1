@@ -5,6 +5,7 @@ import image1 from "../app/assets/whychoose/1.jpeg";
 import image2 from "../app/assets/whychoose/2.jpeg";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import AnimatedHeading from "./AnimatedHeading";
 
 export default function WhyChoose() {
   const router = useRouter();
@@ -69,9 +70,11 @@ export default function WhyChoose() {
           </div>
 
           <div>
-            <h3 className="text-3xl md:text-4xl   text-[#3b2615] leading-snug font-extrabold  mb-4">
-              Our Commitment to Care
-            </h3>
+            <AnimatedHeading
+              text="Our Commitment to Care"
+              className="text-3xl md:text-4xl text-[#3b2615] leading-snug font-extrabold mb-4"
+            />
+
             <motion.p
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -128,9 +131,11 @@ export default function WhyChoose() {
         {/* ROW 2 */}
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div className="order-2 lg:order-1">
-            <h3 className="text-3xl md:text-4xl   text-[#3b2615] leading-snug font-extrabold mb-4">
-              Our Commitment to Customer
-            </h3>
+            <AnimatedHeading
+              text="Our Commitment to Customer"
+              className="text-3xl md:text-4xl text-[#3b2615] leading-snug font-extrabold mb-4"
+            />
+
             <motion.p
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
