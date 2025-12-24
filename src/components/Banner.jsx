@@ -41,10 +41,10 @@ const Banner = () => {
 
             {/* Egg Image */}
             <Image
-              src="/banner/eggs.png"
+              src="/banner/eggs87.svg"
               alt="Egg icon"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
               className="object-contain"
             />
           </div>
@@ -59,10 +59,10 @@ const Banner = () => {
 
             {/* Egg Image */}
             <Image
-              src="/banner/eggs.png"
+              src="/banner/eggs87.svg"
               alt="Egg icon"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
               className="object-contain" 
             />
           </div>

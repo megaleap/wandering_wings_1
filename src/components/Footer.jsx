@@ -196,7 +196,7 @@ const Footer = () => {
               <TwitterXIcon size={16} />
             </a> */}
             <a
-              href="https://linkedin.com"
+              href="https://www.instagram.com/wanderingwings.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 transition"
@@ -204,7 +204,7 @@ const Footer = () => {
               <Linkedin size={16} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.instagram.com/wanderingwings.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 transition"

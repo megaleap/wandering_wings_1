@@ -30,8 +30,8 @@ const testimonials = [
 
     text: "You need consistency, flavour and colour you can depend on — every single day. Our golden-yolk eggs deliver richer taste, stronger structure and clean aroma, making them perfect for baking, plating and every high-performance kitchen.",
 
-    image: "/testimonials/1.png",
-    image1: test5,
+    image: "/testimonials/Nutrition.png",
+    image1: '/testimonials/Ellipse 755.png',
   },
 
   {
@@ -48,8 +48,8 @@ const testimonials = [
       "A brand associated with quality & trust",
     ],
     text: "Our kitchen quality improved dramatically after switching to Wandering Wings. The consistency, taste, and freshness make a real difference in every dish we serve.",
-    image: "/testimonials/2.png",
-    image1: test3,
+    image: "/testimonials/chef.png",
+    image1: "/testimonials/Ellipse 745 1.png",
   },
 
   {
@@ -66,8 +66,8 @@ const testimonials = [
       "From well-cared hens raised on open natural land",
     ],
     text: "Knowing where my food comes from matters. These eggs are clean, ethical, and taste absolutely amazing. I’ll never go back to regular eggs.",
-    image: "/testimonials/3.png",
-    image1: test6,
+    image: "/testimonials/Frame 2147224213.png",
+    image1: '/testimonials/Ellipse 757.png',
   },
 ];
 
@@ -99,8 +99,8 @@ export default function Testimonials() {
       <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
         <div className=" overflow-hidden">
-          <p className="text-yellow-400 text-md tracking-widest mb-3">
-            ✦<span className="text-white font-bold"> OUR FUN FACTS</span>
+          <p className="text-yellow-400 text-lg tracking-widest mb-3">
+            ✦<span className="text-white font-bold "> Crack a fact</span>
           </p>
           <div >
             <AnimatePresence mode="wait">
@@ -225,32 +225,32 @@ export default function Testimonials() {
               {/* Avatars */}
               <div className="flex -space-x-3">
                 <img
-                  src="/testimonials/1.png"
+                  src="/testimonials/Nutrition.png"
                   alt="User 1"
                   className="w-9 h-9 rounded-full border-1 border-black object-cover"
                 />
                 <img
-                  src="/testimonials/2.png"
+                  src="/testimonials/chef.png"
                   alt="User 2"
                   className="w-9 h-9 rounded-full border-1 border-black object-cover"
                 />
                 <img
-                  src="/testimonials/5.png"
+                  src="/testimonials/Ellipse 757.png"
                   alt="User 3"
                   className="w-9 h-9 rounded-full border-1 border-black object-cover"
                 />
-                <img
+                {/* <img
                   src="/testimonials/4.png"
                   alt="User 4"
                   className="w-9 h-9 rounded-full border-1 border-black object-cover"
-                />
+                /> */}
               </div>
 
               {/* Text */}
               <p className="text-sm md:text-base font-medium text-white leading-tight">
                 Trusted by <span className="font-bold">3,000+</span> Happy{" "}
                 <br className="hidden sm:block" />
-                Milk Lovers Worldwide
+                Egg Lovers Worldwide
               </p>
             </div>
           </div>
