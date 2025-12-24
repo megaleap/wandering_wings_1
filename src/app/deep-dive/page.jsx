@@ -21,7 +21,7 @@ const Page = () => {
         <div className="relative  overflow-visible md:overflow-hidden bottom-0 h-[560px] 2xl:h-[900px]  mt-28">
 
   <Image
-    src={heroImg}
+    src={heroImg} 
     alt="Wandric the Hen"
     fill
     priority
