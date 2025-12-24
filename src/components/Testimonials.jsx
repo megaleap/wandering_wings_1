@@ -250,7 +250,7 @@ export default function Testimonials() {
               <p className="text-sm md:text-base font-medium text-white leading-tight">
                 Trusted by <span className="font-bold">3,000+</span> Happy{" "}
                 <br className="hidden sm:block" />
-                Egg Lovers Worldwide
+                Egg Lovers
               </p>
             </div>
           </div>
