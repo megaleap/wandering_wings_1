@@ -196,7 +196,8 @@ const Footer = () => {
               <TwitterXIcon size={16} />
             </a> */}
             <a
-              href="https://www.instagram.com/wanderingwings.in/"
+              href="https://www.linkedin.com/in/wandering-wings-59a501337/
+ "
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 transition"
