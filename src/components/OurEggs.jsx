@@ -11,7 +11,7 @@ const items = [
     type: 'content',
     title: 'Golden Yolk Goodness',
     text: 'Naturally rich, golden yolks from sunlight, greens and natural feed — no artificial colour added.',
-    icon: '🥚',
+    icon: '/oureggs/yellowegg.png',
   },
   {
     type: 'image',
@@ -22,7 +22,7 @@ const items = [
     type: 'content',
     title: 'High Nutrition Levels',
     text: 'More Omega-3s, more Vitamin D, more antioxidants. When hens live naturally, the nutrition shows in every shell.',
-    icon: '⚡',
+    icon: '/oureggs/High Nutrition Levels.png',
   },
   {
     type: 'image',
@@ -33,7 +33,7 @@ const items = [
     type: 'content',
     title: 'Stress-Free Environment',
     text: 'Fresh air, sunlight, and safe shelters keep our hens calm and healthy.',
-    icon: '🏠',
+    icon: '/oureggs/Stress-Free Environment.png',
   },
   {
     type: 'image',
@@ -119,9 +119,15 @@ const OurEggs = () => {
     >
       <h3 className="font-semibold mb-3 text-2xl">{item.title}</h3>
       <p className=" text-white/70 mb-6 text-lg">{item.text}</p>
-      <div className="w-10 h-10 rounded-full bg-yellow-400 text-black flex items-center justify-center">
-        {item.icon}
-      </div>
+      <div className="relative w-14 h-14 rounded-full bg-yellow-400 flex items-center justify-center">
+  <Image
+    src={item.icon}
+    fill
+    alt="icon"
+    className="object-contain"
+  />
+</div>
+
     </div>
   )
 )}

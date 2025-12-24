@@ -1,20 +1,21 @@
 import Banner from "@/components/Banner";
 import Image from "next/image";
 import React from "react";
+// import hens from '../../app/assets/deepdrive/DSC03832.JPG'
 
 const page = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section
-        className="relative min-h-full py-36 mt-28 flex items-center"
-        style={{
-          backgroundImage:
-            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD33YJ6e1-9noPRH-KptfttPfJL0lSiekRzHAiD2ciF2-dCyzE_xt7L7dEYvr9BOhAZvrYOJdi61MUguLZMsSHDeeckTSibvuwWpBc1P1Bx0IPuqzX248VaUmQx8ScdwnFgepohkj_IFhrBqHRoXjRmkHxfUrKGTxiwlZtKWMMS3JQlvvG9-hd2Oc40fmu15vlz0rTGE54fj9KAsX9VKo3RTCI5t15gi6bfwywDZTFg1fvQTEaO1evWrEuZWNGyZ5o-EH4dgG23zU4')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <section className="relative min-h-[60vh] mt-28 flex items-center">
+  <Image
+    src="/about/DSC03832.JPG"
+    alt="Hens"
+    fill
+    priority
+    className="object-cover"
+  />
+
         {/* Overlay */}
         <div className="absolute inset-0 bg-white/50"></div>
 
@@ -61,7 +62,7 @@ const page = () => {
             </div>
 
             {/* Title */}
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#3A2A1A] mb-6">
+            <h2 className="text-3xl md:text-4xl  font-semibold text-[#3A2A1A] mb-6">
               A Mission to Transform Egg Production
             </h2>
 
@@ -85,7 +86,7 @@ const page = () => {
           {/* LEFT CONTENT */}
           <div>
             {/* Title */}
-            <h2 className="text-4xl md:text-5xl font-serif font-semibold text-[#3A2A1A] mb-10">
+            <h2 className="text-4xl md:text-5xl  font-semibold text-[#3A2A1A] mb-10">
               How It All Began
             </h2>
 
@@ -104,7 +105,7 @@ const page = () => {
               </p>
 
               {/* Highlighted Quote */}
-              <div className="bg-[#EEF2DA] border-l-4 border-[#8BAE6F] px-6 py-4 rounded-md text-xl font-serif italic text-[#3A2A1A]">
+              <div className="bg-[#EEF2DA] border-l-4 border-[#8BAE6F] px-6 py-4 rounded-md text-xl  italic text-[#3A2A1A]">
                 “What is good food?”
               </div>
 
@@ -292,7 +293,7 @@ const page = () => {
 <section className="bg-[#FFF5DE] py-28 px-6">
   <div className="max-w-4xl mx-auto text-center">
 
-    <h2 className="text-4xl md:text-5xl font-serif font-semibold text-[#4A2B16] mb-10">
+    <h2 className="text-4xl md:text-5xl  font-semibold text-[#4A2B16] mb-10">
       He further absorbed wisdom under:
     </h2>
 
@@ -312,7 +313,7 @@ const page = () => {
       animals, and regenerative farming practices.
     </p>
 
-    <h3 className="mt-20 text-4xl font-serif font-semibold text-[#4A2B16]">
+    <h3 className="mt-20 text-4xl  font-semibold text-[#4A2B16]">
       Guidance, Gratitude & Growth
     </h3>
 
@@ -336,7 +337,7 @@ const page = () => {
 <section className="bg-[#FFF5DE]  px-6">
   <div className="max-w-5xl mx-auto text-center">
 
-    <h2 className="text-5xl font-serif font-semibold text-[#4A2B16] mb-4">
+    <h2 className="text-5xl  font-semibold text-[#4A2B16] mb-4">
       The Turning Point
     </h2>
 
@@ -345,7 +346,7 @@ const page = () => {
     </p>
 
     <div className="bg-[#F3F1D6] rounded-2xl px-10 py-10 max-w-2xl mx-auto">
-      <p className="font-serif italic text-xl md:text-3xl font-bold  text-[#6A4A2D]">
+      <p className=" italic text-xl md:text-3xl font-bold  text-[#6A4A2D]">
         “Back in 2019, a person who spent three long years waiting—losing hope
         and almost giving up—survived that testing period and then witnessed a
         sudden shift into the bright, lightning-filled days of Wandering Wings,
@@ -365,7 +366,7 @@ const page = () => {
 
     {/* LEFT CONTENT */}
     <div className="text-center lg:text-left">
-      <h2 className="text-5xl font-serif font-semibold text-[#4A2B16] mb-8">
+      <h2 className="text-5xl  font-semibold text-[#4A2B16] mb-8">
         Wandering Wings Today
       </h2>
 
@@ -400,6 +401,17 @@ const page = () => {
 </div>
 
 
+  </div>
+</section>
+<section className="flex justify-center items-center py-20">
+  <div className="rounded-2xl overflow-hidden shadow-lg">
+    <Image
+      src="/about/WhatsApp Image 2025-12-18 at 1.38.19 PM.jpeg"
+      alt="About image"
+      width={600}
+      height={400}
+      className="object-cover"
+    />
   </div>
 </section>
 

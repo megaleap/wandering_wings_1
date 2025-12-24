@@ -3,43 +3,44 @@ import React from 'react'
 import { FiDroplet, FiLayers, FiSun } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 import AnimatedHeading from './AnimatedHeading'
+import Image from 'next/image'
 
 const items = [
   {
     type: 'wandering',
     title: 'Deep Golden Yolks',
     text: 'From sunlight, greens & herbal-rich feed — no artificial pigments.',
-    icon: <FiSun className="w-5 h-5 text-black" />,
+    icon: '/oureggs/yellowegg.png',
   },
   {
     type: 'wandering',
     title: 'Clean, Neutral Aroma',
     text: 'No “fishy smell” because hens eat natural, chemical-free diets.',
-    icon: <FiLayers className="w-5 h-5 text-black" />,
+    icon: '/oureggs/Clean, Neutral Aroma.png',
   },
   {
     type: 'wandering',
     title: 'Higher Nutrition Levels',
     text: 'Naturally richer in Vitamin D, Omega-3s, antioxidants & protein.',
-    icon: <FiDroplet className="w-5 h-5 text-black" />,
+    icon: '/oureggs/High Nutrition Levels.png',
   },
   {
     type: 'regular',
     title: 'Pale or Artificially Darkened Yolks',
     text: 'Colour often enhanced with synthetic additives.',
-    icon: <FiSun className="w-5 h-5 text-black" />,
+    icon: '/oureggs/yellowegg.png',
   },
   {
     type: 'regular',
     title: 'Fishy or Unpleasant Smell',
     text: 'Caused by poor-quality feed.',
-    icon: <FiLayers className="w-5 h-5 text-black" />,
+    icon: '/oureggs/Clean, Neutral Aroma.png',
   },
   {
     type: 'regular',
     title: 'Lower Nutrient Density',
     text: 'Factory hens get less sunlight & limited motion.',
-    icon: <FiDroplet className="w-5 h-5 text-black" />,
+    icon: '/oureggs/High Nutrition Levels.png',
   },
 ]
 
@@ -109,9 +110,16 @@ const Whychooseoureggs = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
             >
-              <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
-                {item.icon}
-              </div>
+              <div className="relative w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+  <Image 
+    src={item.icon}
+    fill
+    alt="icon"
+    sizes="56px"
+    className="object-contain"
+  />
+</div>
+
 
               <div>
                 <h3 className="font-semibold text-[#3b2518] mb-1">
@@ -145,9 +153,16 @@ const Whychooseoureggs = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
             >
-              <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
-                {item.icon}
-              </div>
+              <div className="relative w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+  <Image
+    src={item.icon}
+    fill
+    alt="icon"
+    sizes="56px"
+    className="object-contain"
+  />
+</div>
+
 
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">

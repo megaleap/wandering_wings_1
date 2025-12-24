@@ -101,7 +101,7 @@ const Footer = () => {
             <li>Homes</li>
             <li>About Us</li>
             <li>Products</li>
-            <li>Deep Drive</li>
+            <li>Deep Dive</li>
             <li>Blogs</li>
             <li>Gallery</li>
             <li>Contact Us</li>
@@ -109,14 +109,14 @@ const Footer = () => {
         </div>
 
         {/* Legal */}
-        <div>
+        {/* <div>
           <h4 className="font-semibold text-lg mb-4">Legal</h4>
           <ul className="space-y-3 text-sm text-gray-200">
             <li>Privacy Policy</li>
             <li>Terms and Conditions</li>
             <li>Cookie Policy</li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Newsletter */}
         <div>

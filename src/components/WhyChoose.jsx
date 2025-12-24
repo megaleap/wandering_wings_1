@@ -184,7 +184,15 @@ export default function WhyChoose() {
               className="flex gap-5"
             >
               <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shrink-0 hover:bg-white">
-                <Handshake className="text-black " size={22} />
+                <div className="relative w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+                  <Image 
+                    src='/ads/farmer.png'
+                    fill
+                    alt="icon"
+                    sizes="56px"
+                    className="object-contain"
+                  />
+                </div>
               </div>
               <div>
                 <h4 className="text-white font-semibold text-lg mb-2">
@@ -210,7 +218,15 @@ export default function WhyChoose() {
               className="flex gap-5"
             >
               <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shrink-0 hover:bg-white">
-                <Diamond className="text-black" size={22} />
+                <div className="relative w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+                  <Image 
+                    src='/ads/Transparent & Honest Practices.png'
+                    fill
+                    alt="icon"
+                    sizes="56px"
+                    className="object-contain"
+                  />
+                </div>
               </div>
               <div>
                 <h4 className="text-white font-semibold text-lg mb-2">
@@ -236,7 +252,15 @@ export default function WhyChoose() {
               className="flex gap-5"
             >
               <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shrink-0 hover:bg-white">
-                <Smile className="text-black" size={22} />
+                <div className="relative w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+                  <Image 
+                    src='/ads/Service Beyond Expectations.png'
+                    fill
+                    alt="icon"
+                    sizes="56px"
+                    className="object-contain"
+                  />
+                </div>
               </div>
               <div>
                 <h4 className="text-white font-semibold text-lg mb-2">

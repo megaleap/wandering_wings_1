@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+// import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function AboutFarm() {
@@ -136,26 +137,26 @@ export default function AboutFarm() {
               <ValueCard
                 title="Driven by Nature"
                 subtitle="Supported by Care"
-                icon="🌿"
+                icon='/about/Frame 2147224209.png'
               />
               <ValueCard
                 title="Committed to"
                 subtitle="Sustainable Farming"
-                icon="♻️"
+                icon="/about/black.png"
               />
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                ["20k+", "Eggs / week"],
-                ["5000+", "Happy customers"],
-                ["100+", "Locations"],
-                ["100+", "Happy farmers"],
+                ["20k+", "Eggs / day"],
+                ["5000+", "No of Happy customers"],
+                ["25+", "No of locations served"],
+                ["10+", "No of Happy farmers"],
               ].map(([value, label]) => (
                 <div
                   key={label}
-                  className="group relative overflow-hidden bg-[#39251A] text-white rounded-2xl py-8 text-center transition-colors duration-500"
+                  className="group relative overflow-hidden bg-[#39251A] text-white rounded-2xl py-6 text-center transition-colors duration-500"
                 >
                   {/* Hover wave */}
                   <div
@@ -173,7 +174,7 @@ export default function AboutFarm() {
                   {/* Content */}
                   <div className="relative z-10 group-hover:text-[#39251A] transition-colors duration-500">
                     <p className="text-2xl font-bold">{value}</p>
-                    <p className="text-xs mt-1">{label}</p>
+                    <p className="text-[15px] mt-1">{label}</p>
                   </div>
                 </div>
               ))}
@@ -191,9 +192,15 @@ export default function AboutFarm() {
 function ValueCard({ icon, title, subtitle }) {
   return (
     <div className="flex gap-3 p-4">
-      <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center">
-        <span className="text-xl">{icon}</span>
+       <div className="relative w-14 h-14 bg-yellow-400 rounded-lg flex items-center justify-center">
+        <Image
+          src={icon}
+          fill
+          alt={title}
+          className="object-contain"
+        />
       </div>
+
       <div>
         <p className="font-bold text-[#39251A]">{title}</p>
         <p className="text-[#39251A]">{subtitle}</p>

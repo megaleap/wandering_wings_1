@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 // replace these with your actual images
-import heroImg from "../assets/deepdrive/image.png";
+import heroImg from "../assets/deepdrive/grg.svg";
 // import heroImg from "../app/assets/deepdrive/image.png";
 import img1 from "../assets/deepdrive/image1.png";
 import img2 from "../assets/deepdrive/image2.jpg";
@@ -18,7 +18,7 @@ const Page = () => {
     <main className="bg-[#fff5df]  border border-white/60">
       {/* ================= HERO ================= */}
       <section className="w-full mx-auto">
-        <div className="relative  overflow-visible md:overflow-hidden bottom-0 h-[560px] 2xl:h-[900px]  mt-28">
+        <div className="relative  overflow-visible md:overflow-hidden bottom-0 h-[400px] 2xl:h-[610px]  mt-28">
 
   <Image
     src={heroImg} 
@@ -34,11 +34,10 @@ const Page = () => {
           <div className="absolute inset-0 bg-black/20" />
 
           {/* Bottom Text */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-10">
+          <div className="absolute bottom-0 text-[white] bg-[#3b2615]/60 left-0 right-0 p-6 md:p-10 z-10">
             <AnimatedHeading
-              text="Wandric, your guide to happy eggs!
-"
-              className="text-[#3b2615] text-2xl md:text-4xl font-bold mb-2 leading-tight text-center"
+              text="Wandric, your guide to happy eggs!"
+              className="  text-2xl md:text-4xl font-bold  leading-tight text-center"
             />
             {/* <h1 className="text-white text-2xl md:text-4xl font-bold mb-2 leading-tight text-center"></h1> */}
             <AnimatedHeading
@@ -49,7 +48,7 @@ const Page = () => {
                 duration: 2.8,
                 ease: [0.25, 0.8, 0.25, 1],
               }}
-              className="text-[#3b2615]/90 text-sm md:text-base  text-center"
+              className=" text-sm md:text-base  text-center"
               text="Discover the journey of our pasture-raised eggs, from our happy
               hens to your healthy home."
             />
