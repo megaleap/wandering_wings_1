@@ -149,7 +149,7 @@ export default function AboutFarm() {
             {/* Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                ["20k+", "Eggs / day"],
+                ["30k", "Eggs per day"],
                 ["5000+", "No of Happy customers"],
                 ["25+", "No of locations served"],
                 ["10+", "No of Happy farmers"],
