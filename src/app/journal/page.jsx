@@ -323,7 +323,7 @@ const page = () => {
     </p>
 
     <ul className="mt-6 space-y-3 text-base text-[#2F1E14] list-disc list-inside max-w-xl mx-auto text-left">
-      <li>Happy Hens, Trichy</li>
+      <li>Ashok Sir, Trichy</li>
       <li>Mentor Michael Sommerland</li>
       <li>Many others who shaped his journey</li>
     </ul>
