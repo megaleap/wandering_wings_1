@@ -146,11 +146,7 @@ export default function AboutFarm() {
             </div>
 
             {/* Stats */}
-            <div
-              className={`grid grid-cols-2 sm:grid-cols-4 gap-4 ${
-                isVisible ? "animate-slide-up delay-2" : "opacity-0"
-              }`}
-            >
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 ["20k+", "Eggs / week"],
                 ["5000+", "Happy customers"],
@@ -159,15 +155,29 @@ export default function AboutFarm() {
               ].map(([value, label]) => (
                 <div
                   key={label}
-                  className="group relative overflow-hidden bg-[#39251A] text-white rounded-2xl py-8 text-center"
+                  className="group relative overflow-hidden bg-[#39251A] text-white rounded-2xl py-8 text-center transition-colors duration-500"
                 >
-                  <div className="relative z-10">
+                  {/* Hover wave */}
+                  <div
+                    className="
+      absolute inset-0
+      bg-yellow-400
+      translate-y-full
+      rounded-t-[120%]
+      transition-all duration-500 ease-out
+      group-hover:translate-y-0
+      group-hover:rounded-2xl
+    "
+                  />
+
+                  {/* Content */}
+                  <div className="relative z-10 group-hover:text-[#39251A] transition-colors duration-500">
                     <p className="text-2xl font-bold">{value}</p>
                     <p className="text-xs mt-1">{label}</p>
                   </div>
                 </div>
               ))}
-            </div>
+            </div> 
 
           </div>
         </div>

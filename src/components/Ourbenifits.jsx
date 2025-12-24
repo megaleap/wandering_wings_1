@@ -79,7 +79,7 @@ const OurBenefits = () => {
             delay: 0.15,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 transition text-black text-sm font-extrabold px-5 py-1.5 rounded-xl shadow"
+          className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 transition text-black  font-extrabold pl-5 text-lg pr-1.5 py-1.5 rounded-xl shadow"
           onClick={() => router.push("/contact")}
         >
           Contact Us
@@ -193,7 +193,7 @@ function BenefitCard({ visible, delay, icon, title, text }) {
     >
       <div className="absolute inset-0 bg-yellow-400 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-0" />
       <div className="relative z-10 flex items-start gap-4">
-        <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-white group-hover:text-black group-hover:bg-white">
+        <div className="w-16 2xl:w-14 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-white group-hover:text-black group-hover:bg-white">
           {icon}
         </div>
         <div>

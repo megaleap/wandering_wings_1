@@ -89,7 +89,7 @@ const Whychooseoureggs = () => {
 
         {/* LEFT COLUMN */}
         <motion.div
-          className="flex flex-col pr-6 md:pr-12 border-r-2 border-[#3b2518]"
+          className="flex flex-col pr-6 md:pr-12 md:border-r-2 border-[#3b2518]"
           variants={slideUp}
           initial="hidden"
           whileInView="visible"

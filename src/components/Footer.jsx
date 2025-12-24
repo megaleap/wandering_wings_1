@@ -187,14 +187,14 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-4">
-            <a
+            {/* <a
               href="https://x.com"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 hover:text-yellow-400 transition"
             >
               <TwitterXIcon size={16} />
-            </a>
+            </a> */}
             <a
               href="https://linkedin.com"
               target="_blank"

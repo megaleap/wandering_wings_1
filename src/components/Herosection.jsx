@@ -54,7 +54,7 @@ const Herosection = () => {
   }, []);
 
   return (
-    <div className="relative h-full pt-16 overflow-hidden">
+    <div className="relative h-full  pt-22 overflow-hidden">
       {/* Video Background */}
       <video
         ref={videoRef}
@@ -68,9 +68,9 @@ const Herosection = () => {
       </video>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#3b2518]/85 z-10" />
+      <div className="absolute  inset-0 bg-[#3b2518]/85 z-10" />
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="relative  z-20 max-w-7xl mx-auto  px-10">
         <div className="flex flex-col lg:flex-row items-center gap-10 my-20">
           {/* Left Content */}
           <div className="max-w-5xl">
@@ -79,25 +79,24 @@ const Herosection = () => {
             </p>
 
             {/* Animated Heading */}
-           <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight space-y-2">
-  <AnimatedLine text="Premium Pasture-Raised Eggs" />
-  <AnimatedLine text="for Every Plate that" delay={0.4} />
+            <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight space-y-2">
+              <AnimatedLine text="Premium Pasture-Raised Eggs" />
+              <AnimatedLine text="for Every Plate that" delay={0.4} />
 
-  <div className="flex items-center gap-3">
-    <AnimatedLine text="Demands Quality" delay={0.9} />
+              <div className="flex items-center gap-3">
+                <AnimatedLine text="Demands Quality" delay={0.9} />
 
-    {/* Hen emoji (NOT animated per character) */}
-    <motion.span
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 1.4, duration: 0.3, ease: "easeOut" }}
-      className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl inline-block"
-    >
-      🐔
-    </motion.span>
-  </div>
-</h1>
-
+                {/* Hen emoji (NOT animated per character) */}
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1.4, duration: 0.3, ease: "easeOut" }}
+                  className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl inline-block"
+                >
+                  🐔
+                </motion.span>
+              </div>
+            </h1>
 
             {/* Description */}
             <div className="text-white text-base md:text-lg mt-8 max-w-3xl space-y-2">
@@ -111,7 +110,7 @@ const Herosection = () => {
 
             {/* CTA + Social Proof */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 mt-10">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-8 py-3 rounded-lg flex items-center gap-3 shadow-lg transition">
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-lg text-black font-bold pr-1.5 pl-5 py-1.5 rounded-lg flex items-center gap-3 shadow-lg transition">
                 Explore Our Farm
                 <span className="w-10 h-10 bg-white rounded flex items-center justify-center">
                   <ArrowRight size={16} />
@@ -140,18 +139,18 @@ const Herosection = () => {
           </div>
 
           {/* Right Floating Badge */}
-          <div className="relative">
-            <Image
-              src={eggs}
-              alt="Eggs"
-              className="w-24 lg:w-32 object-contain"
-            />
-            <div className="absolute -top-4 -right-6">
-              <div className="w-24 lg:w-32 h-24 lg:h-32 bg-yellow-400 rounded-full flex items-center justify-center border-4 border-white shadow-xl animate-spin-slow">
-                <Image src={learn} alt="Learn More" />
-              </div>
-            </div>
-          </div>
+          <div className="relative md:-right-22 justify-end">
+    <Image
+      src={eggs}
+      alt="Eggs"
+      className="w-24 lg:w-32  object-contain"
+    />
+    <div className="absolute -top-0 -right-18">
+      <div className="w-24 lg:w-32 h-24 lg:h-32 bg-yellow-400 rounded-full flex items-center justify-center border-4 border-white shadow-xl animate-spin-slow">
+        <Image src={learn} alt="Learn More" />
+      </div>
+    </div>
+  </div>
         </div>
       </div>
     </div>

@@ -15,18 +15,20 @@ import Banner from "@/components/Banner";
 
 const Page = () => {
   return (
-    <main className="bg-[#fff5df] border border-white/60">
+    <main className="bg-[#fff5df]  border border-white/60">
       {/* ================= HERO ================= */}
       <section className="w-full mx-auto">
-        <div className="relative  overflow-hidden min-h-[260px] md:min-h-[530px] mt-28">
-          {/* Background Image */}
-          <Image
-            src={heroImg}
-            alt="Wandric the Hen"
-            fill
-            priority
-            className="object-cover object-center"
-          />
+        <div className="relative  overflow-visible md:overflow-hidden bottom-0 h-[560px] 2xl:h-[900px]  mt-28">
+
+  <Image
+    src={heroImg}
+    alt="Wandric the Hen"
+    fill
+    priority
+    className="object-contain md:object-cover object-center"
+  />
+{/* </div> */}
+
 
           {/* Soft Overlay */}
           <div className="absolute inset-0 bg-black/20" />
@@ -36,7 +38,7 @@ const Page = () => {
             <AnimatedHeading
               text="Wandric, your guide to happy eggs!
 "
-              className="text-white text-2xl md:text-4xl font-bold mb-2 leading-tight text-center"
+              className="text-[#3b2615] text-2xl md:text-4xl font-bold mb-2 leading-tight text-center"
             />
             {/* <h1 className="text-white text-2xl md:text-4xl font-bold mb-2 leading-tight text-center"></h1> */}
             <AnimatedHeading
@@ -47,7 +49,7 @@ const Page = () => {
                 duration: 2.8,
                 ease: [0.25, 0.8, 0.25, 1],
               }}
-              className="text-white/90 text-sm md:text-base  text-center"
+              className="text-[#3b2615]/90 text-sm md:text-base  text-center"
               text="Discover the journey of our pasture-raised eggs, from our happy
               hens to your healthy home."
             />

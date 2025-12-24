@@ -109,8 +109,8 @@ export default function WhyChoose() {
                 group inline-flex items-center gap-2
                 bg-yellow-400 hover:bg-white
                 transition-colors duration-300
-                text-black text-sm font-extrabold
-                px-5 py-3 rounded-xl shadow cursor-pointer
+                text-black text-lg font-extrabold
+                pl-5 py-1.5 pr-1.5 rounded-xl shadow cursor-pointer
               "
               >
                 Contact Us
