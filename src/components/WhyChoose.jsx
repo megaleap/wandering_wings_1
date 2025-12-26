@@ -11,7 +11,9 @@ import ScrollAnimations from "./ScrollAnimations";
 export default function WhyChoose() {
   const router = useRouter();
   const text = "Why Choose Wandering Wings — A Better  Egg, Every Day";
-  const chars = text.split("");
+  // Split text into words and spaces separately
+  const parts = text.split(/(\s+)/);
+  let charIndex = 0;
 
   return (
     <>
@@ -30,30 +32,55 @@ export default function WhyChoose() {
               whileInView="visible"
               viewport={{ once: true, margin: "-120px" }}
               className="text-3xl md:text-4xl text-[#3b2615] leading-snug font-extrabold"
+              style={{ whiteSpace: "normal", wordBreak: "normal" }}
             >
-              {chars.map((char, i) => (
-                <motion.span
-                  key={i}
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: 24, // 🌊 start slightly down
-                    },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                  }}
-                  transition={{
-                    duration: 0.2,
-                    ease: [0.25, 0.8, 0.25, 1], // 🌊 smooth tide
-                    delay: i * 0.025, // 👉 left → right wave
-                  }}
-                  className="inline-block"
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
+              {parts.map((part, partIndex) => {
+                const isSpace = part.trim() === "";
+                
+                // For spaces, render them directly as regular spaces
+                if (isSpace) {
+                  return <span key={partIndex}> </span>;
+                }
+                
+                // For words, wrap in a container that prevents breaking within the word
+                const chars = part.split("");
+                return (
+                  <span
+                    key={partIndex}
+                    style={{ 
+                      display: "inline-block",
+                      whiteSpace: "nowrap"
+                    }}
+                  >
+                    {chars.map((char) => {
+                      const currentIndex = charIndex++;
+                      return (
+                        <motion.span
+                          key={currentIndex}
+                          variants={{
+                            hidden: {
+                              opacity: 0,
+                              y: 24, // 🌊 start slightly down
+                            },
+                            visible: {
+                              opacity: 1,
+                              y: 0,
+                            },
+                          }}
+                          transition={{
+                            duration: 0.2,
+                            ease: [0.25, 0.8, 0.25, 1], // 🌊 smooth tide
+                            delay: currentIndex * 0.025, // 👉 left → right wave
+                          }}
+                          className="inline-block"
+                        >
+                          {char}
+                        </motion.span>
+                      );
+                    })}
+                  </span>
+                );
+              })}
             </motion.h2>
 
             {/* <p>
