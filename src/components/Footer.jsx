@@ -84,7 +84,7 @@ const Footer = () => {
             </div>
 
             <div className="flex items-start gap-3">
-              <MapPin size={16} className="mt-1" />
+              <MapPin size={45} className="mt-1" />
               <span>
                 Survey No.132, Sriauro Farms, Balehonniga village, Halaguru,
                 Mandya, Karnataka - 571421
