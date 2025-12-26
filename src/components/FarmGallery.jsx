@@ -4,10 +4,10 @@ import { ArrowRight, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
-import img1 from "@/app/assets/gallery/1.png";
-import img2 from "@/app/assets/gallery/2.jpeg";
-import img3 from "@/app/assets/gallery/3.jpeg";
-import img4 from "@/app/assets/gallery/4.jpeg";
+import img1 from "../app/assets/gallery/1.png";
+import img2 from "../app/assets/gallery/2.jpeg";
+import img3 from "../app/assets/gallery/3.jpeg";
+import img4 from "../app/assets/gallery/4.jpeg";
 import AnimatedHeading from "./AnimatedHeading";
 
 const galleryImages = [img1, img2, img3, img4];
