@@ -12,7 +12,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import wander from "../app/assets/Wandiring.svg";
-import logo1 from "../app/assets/logo1.jpeg";
+import certifiedHumane from "../app/assets/certified_humane.webp";
+import hwa from "../app/assets/HWA.jpeg";
 
 
 // import TwitterXIcon from "@/components/icons/TwitterXIcon";
@@ -61,20 +62,18 @@ const Footer = () => {
     <footer className="bg-[#3a2a1f] text-white">
       {/* Top Section */}
       <div
-        className="max-w-7xl mx-auto px-6 py-14 grid gap-10
+        className="max-w-7xl mx-auto px-6 pt-14 pb-6 grid gap-10
         grid-cols-1
         md:grid-cols-2
         lg:grid-cols-4"
       >
         {/* Logo & Contact */}
         <div>
-          <div className="flex items-center gap-2 mb-4 justify-between">
+          <div className="flex items-center justify-center gap-2 mb-4">
             <Image src={wander} className="h-20" alt="logo" />
-            <Image src={logo1} className="h-20 w-20" alt="logo" />
-
           </div>
 
-          <p className="text-sm mb-6 text-gray-200">
+          <p className="text-sm mb-4 text-gray-200 text-center">
             Healthy Eggs, Happy Hens.
           </p>
           <hr className="border-t border-white/20 mb-4" />
@@ -91,6 +90,26 @@ const Footer = () => {
                 Mandya, Karnataka - 571421
               </span>
             </div>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex gap-4 mt-4 justify-start">
+            <a
+              href="https://www.linkedin.com/in/wandering-wings-59a501337/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 transition"
+            >
+              <Linkedin size={16} />
+            </a>
+            <a
+              href="https://www.instagram.com/wanderingwings.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 transition"
+            >
+              <Instagram size={16} />
+            </a>
           </div>
         </div>
 
@@ -157,9 +176,27 @@ const Footer = () => {
           {error && <p className="text-red-400 text-xs mb-2">{error}</p>}
           {success && <p className="text-green-400 text-xs mb-2">{success}</p>}
 
-          <div className="flex items-center gap-3 text-sm text-gray-200">
+          <div className="flex items-center gap-3 text-sm text-gray-200 mb-4">
             <Mail size={16} />
             <span>operations@wanderingwings.in</span>
+          </div>
+
+          {/* Certification Badges */}
+          <div className="flex flex-row gap-3 mt-4 items-center">
+            <Image
+              src={certifiedHumane}
+              alt="Certified Humane Raised & Handled"
+              width={200}
+              height={80}
+              className="h-16 w-auto object-contain"
+            />
+            <Image
+              src={hwa}
+              alt="Humane World for Animals"
+              width={200}
+              height={80}
+              className="h-16 w-auto object-contain"
+            />
           </div>
         </div>
       </div>
@@ -169,50 +206,24 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-200">
           <p>Copyright © 2025 All Rights Reserved.</p>
 
-          <p className="flex gap-2">
+          <p className="flex items-center gap-2">
             Designed & Developed by{" "}
-            {/* <img
-              src="/favicon.svg"
-              alt="logo"
-              className="w-4 h-4  object-cover"
-            /> */}
             <a
               href="https://www.megaleap.ai/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline"
             >
-              megaleap.ai
+              MegaLeap
             </a>
+            <Image
+              src="/MegaLeap.svg"
+              alt="MegaLeap logo"
+              width={16}
+              height={16}
+              className="w-4 h-4 object-contain drop-shadow-[0_0_3px_rgba(144,238,144,0.8)]"
+            />
           </p>
-
-          <div className="flex gap-4">
-            {/* <a
-              href="https://x.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 hover:text-yellow-400 transition"
-            >
-              <TwitterXIcon size={16} />
-            </a> */}
-            <a
-              href="https://www.linkedin.com/in/wandering-wings-59a501337/
- "
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 transition"
-            >
-              <Linkedin size={16} />
-            </a>
-            <a
-              href="https://www.instagram.com/wanderingwings.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 transition"
-            >
-              <Instagram size={16} />
-            </a>
-          </div>
         </div>
       </div>
     </footer>
