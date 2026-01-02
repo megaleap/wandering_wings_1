@@ -10,7 +10,7 @@ const items = [
   {
     type: 'content',
     title: 'Golden Yolk Goodness',
-    text: 'Naturally rich, golden yolks from sunlight, greens and natural feed — no artificial colour added.',
+    text: 'Naturally rich, golden yolks shaped by sunlight, fresh greens, and wholesome feed—never by artificial colour.',
     icon: '/oureggs/yellowegg.png',
   },
   {
@@ -32,7 +32,7 @@ const items = [
   {
     type: 'content',
     title: 'Stress-Free Environment',
-    text: 'Fresh air, sunlight, and safe shelters keep our hens calm and healthy.',
+    text: 'Fresh air, sunlight, and safe shelters keep our hens safe and healthy.',
     icon: '/oureggs/Stress-Free Environment.png',
   },
   {
@@ -73,7 +73,7 @@ const OurEggs = () => {
       className="bg-[#3b2518] text-white py-20 px-6 md:px-12"
     >
       {/* ================= HEADING ================= */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
+      <div className="text-center max-w-6xl mx-auto mb-16">
         <p className="text-lg tracking-widest text-white mb-3">
           <span className="text-yellow-500">✦</span> OUR EGGS
         </p>

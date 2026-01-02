@@ -11,6 +11,7 @@ import customer1 from "../app/assets/Ellipse 754.png";
 import customer2 from "../app/assets/Ellipse 744.png";
 import customer3 from "../app/assets/Ellipse 746.png";
 import customer4 from "../app/assets/Ellipse 747.png";
+import { useRouter } from "next/navigation";
 
 const AnimatedLine = ({ text, delay = 0 }) => {
   const chars = text.split("");
@@ -45,13 +46,20 @@ const AnimatedLine = ({ text, delay = 0 }) => {
 
 const Herosection = () => {
   const videoRef = useRef(null);
-
+ const router = useRouter();
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.6;
       videoRef.current.play().catch(() => {});
     }
   }, []);
+
+  const handleClick = () => {
+    const section = document.getElementById("about-farm");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="relative h-full  pt-22 overflow-hidden">
@@ -68,7 +76,7 @@ const Herosection = () => {
       </video>
 
       {/* Overlay */}
-      <div className="absolute  inset-0 bg-[#3b2518]/85 z-10" />
+      <div className="absolute  inset-0 bg-[#3b2518]/60 z-10" />
 
       <div className="relative  z-20 max-w-7xl mx-auto  px-10">
         <div className="flex flex-col lg:flex-row items-center gap-10 my-20">
@@ -110,7 +118,7 @@ const Herosection = () => {
 
             {/* CTA + Social Proof */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 mt-10">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-lg text-black font-bold pr-1.5 pl-5 py-1.5 rounded-lg flex items-center gap-3 shadow-lg transition">
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-lg text-black font-bold pr-1.5 pl-5 py-1.5 rounded-lg flex items-center gap-3 shadow-lg transition" onClick={handleClick}>
                 Explore Our Farm
                 <span className="w-10 h-10 bg-white rounded flex items-center justify-center">
                   <ArrowRight size={16} />

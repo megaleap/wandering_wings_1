@@ -31,7 +31,7 @@ const testimonials = [
     text: "You need consistency, flavour and colour you can depend on — every single day. Our golden-yolk eggs deliver richer taste, stronger structure and clean aroma, making them perfect for baking, plating and every high-performance kitchen.",
 
     image: "/testimonials/Nutrition.png",
-    image1: '/testimonials/Ellipse 755.png',
+    image1: "/testimonials/Ellipse 755.png",
   },
 
   {
@@ -67,7 +67,7 @@ const testimonials = [
     ],
     text: "Knowing where my food comes from matters. These eggs are clean, ethical, and taste absolutely amazing. I’ll never go back to regular eggs.",
     image: "/testimonials/Frame 2147224213.png",
-    image1: '/testimonials/Ellipse 757.png',
+    image1: "/testimonials/Ellipse 757.png",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function Testimonials() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    }, 25000);
 
     return () => clearInterval(interval);
   }, []);
@@ -90,172 +90,153 @@ export default function Testimonials() {
 
   const t = testimonials[index];
 
+  const slideVariants = {
+    initial: {
+      x: "100%",
+      opacity: 0,
+    },
+    animate: {
+      x: "0%",
+      opacity: 1,
+      transition: {
+        duration: 1.6,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+    exit: {
+      x: "-100%",
+      opacity: 0,
+      transition: {
+        duration: 1.6,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
   return (
-    <section
-      className="relative overflow-hidden text-white py-16 md:py-20 bg-cover bg-center"
-      style={{ backgroundImage: "url('/hens1.jpg')" }}
+<section
+  className="relative overflow-hidden text-white py-16 md:py-20 bg-cover bg-center"
+  style={{ backgroundImage: "url('/hens1.jpg')" }}
+>
+  <div className="absolute inset-0 bg-[#2b1d12]/85"></div>
+
+  <AnimatePresence mode="wait">
+    <motion.div
+      key={index}
+      variants={slideVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
     >
-      <div className="absolute inset-0 bg-[#2b1d12]/85"></div>
-      <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        {/* LEFT CONTENT */}
-        <div className=" overflow-hidden">
-          <p className="text-yellow-400 text-lg tracking-widest mb-3">
-            ✦<span className="text-white font-bold "> Crack a fact</span>
-          </p>
-          <div >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                className="min-h-[110px]"
-                initial={{ x: "100%" }} // 👉 start outside right
-                animate={{ x: "0%" }} // ✅ center
-                exit={{ x: "-100%" }} // 👈 exit fully left
-                transition={{
-                  duration: 2.4,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                {/* <h2 className="text-3xl md:text-4xl ">
-              Real feedback from families & kitchens we proudly serve
-            </h2> */}
-                <div className="min-h-[100px] md:min-h-[100px] mb-4">
-                  <h2 className="text-3xl md:text-4xl font-bold ">
-                    {t.heading}
-                  </h2>
-                </div>
+      {/* LEFT CONTENT */}
+      <div className="overflow-hidden">
+        <p className="text-yellow-400 text-lg tracking-widest mb-3">
+          ✦ <span className="text-white font-bold">Crack a fact</span>
+        </p>
 
-                {/* Stars */}
-
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-lg">
-                      ★
-                    </span>
-                  ))}
-                </div>
-
-                {/* Text */}
-                <div className="min-h-[140px] md:min-h-[160px] mb-4">
-                  <p className="text-white/80 leading-relaxed">{t.text}</p>
-                  <hr className="mt-10" />
-                </div>
-
-                {/* Fun Facts / Points */}
-                {t.title && t.points && (
-                  <div className="mb-8 bg-white/10 border border-white/20 rounded-2xl p-6">
-                    <span className="block text-yellow-400 font-semibold mb-4">
-                      {t.title}
-                    </span>
-
-                    <ul className="space-y-2">
-                      {t.points.map((point, i) => (
-                        <li
-                          key={i}
-                          className="text-white/90 text-sm flex items-start gap-2"
-                        >
-                          <span className="text-yellow-400 mt-[2px]">✔</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Author + Controls */}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-3">
-              <Image
-                src={t.image1}
-                alt={t.name}
-                width={50}
-                height={50}
-                className="rounded-full border-2 border-white object-cover"
-              />
-
-              <div>
-                <p className="font-semibold leading-tight">{t.name}</p>
-                <p className="text-sm text-white/60">{t.role}</p>
-              </div>
-            </div>
-
-            <div className="flex gap-3">
-              <button
-                onClick={prev}
-                className="w-10 h-10 rounded-full bg-yellow-400 text-black flex items-center justify-center hover:scale-105 transition border-2 border-white"
-              >
-                <ArrowLeft size={18} className="text-white" />
-              </button>
-              <button
-                onClick={next}
-                className="w-10 h-10 rounded-full bg-yellow-400 text-black flex items-center justify-center hover:scale-105 transition border-2 border-white"
-              >
-                <ArrowRight size={18} className="text-white" />
-              </button>
-            </div>
-          </div>
+        <div className="min-h-[100px] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            {t.heading}
+          </h2>
         </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="relative max-w-md mx-auto w-full">
-          <div className="relative h-[350px] md:h-[720px] rounded-3xl overflow-hidden shadow-xl">
+        {/* Stars */}
+        <div className="flex gap-1 mb-4">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <span key={i} className="text-yellow-400 text-lg">★</span>
+          ))}
+        </div>
+
+        {/* Text */}
+        <div className="min-h-[160px] mb-6">
+          <p className="text-white/80 leading-relaxed">{t.text}</p>
+          <hr className="mt-8" />
+        </div>
+
+        {/* Points */}
+        {t.title && t.points && (
+          <div className="mb-8 bg-white/10 border border-white/20 rounded-2xl p-6">
+            <span className="block text-yellow-400 font-semibold mb-4">
+              {t.title}
+            </span>
+
+            <ul className="space-y-2">
+              {t.points.map((point, i) => (
+                <li
+                  key={i}
+                  className="text-white/90 text-sm flex items-start gap-2"
+                >
+                  <span className="text-yellow-400 mt-[2px]">✔</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Author + Controls */}
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center gap-3">
             <Image
-              key={t.image} // forces smooth image swap
-              src={t.image}
+              src={t.image1}
               alt={t.name}
-              fill
-              className="object-cover transition-opacity duration-700"
-              priority
+              width={50}
+              height={50}
+              className="rounded-full border-2 border-white object-cover"
             />
+            <div>
+              <p className="font-semibold">{t.name}</p>
+              <p className="text-sm text-white/60">{t.role}</p>
+            </div>
           </div>
 
-          {/* Badge */}
-          <div className="absolute bottom-4 left-4 right-4">
-            <div
-              className="
-              flex items-center gap-4
-              bg-white/30 backdrop-blur-md
-              border border-white/40
-              rounded-2xl px-4 py-3
-              shadow-lg
-             "
+          <div className="flex gap-3">
+            <button
+              onClick={prev}
+              className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center hover:scale-105 transition border-2 border-white"
             >
-              {/* Avatars */}
-              <div className="flex -space-x-3">
-                <img
-                  src="/testimonials/Nutrition.png"
-                  alt="User 1"
-                  className="w-9 h-9 rounded-full border-1 border-black object-cover"
-                />
-                <img
-                  src="/testimonials/chef.png"
-                  alt="User 2"
-                  className="w-9 h-9 rounded-full border-1 border-black object-cover"
-                />
-                <img
-                  src="/testimonials/Ellipse 757.png"
-                  alt="User 3"
-                  className="w-9 h-9 rounded-full border-1 border-black object-cover"
-                />
-                {/* <img
-                  src="/testimonials/4.png"
-                  alt="User 4"
-                  className="w-9 h-9 rounded-full border-1 border-black object-cover"
-                /> */}
-              </div>
-
-              {/* Text */}
-              <p className="text-sm md:text-base font-medium text-white leading-tight">
-                Trusted by <span className="font-bold">3,000+</span> Happy{" "}
-                <br className="hidden sm:block" />
-                Egg Lovers
-              </p>
-            </div>
+              <ArrowLeft size={18} className="text-white" />
+            </button>
+            <button
+              onClick={next}
+              className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center hover:scale-105 transition border-2 border-white"
+            >
+              <ArrowRight size={18} className="text-white" />
+            </button>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* RIGHT IMAGE */}
+      <div className="relative max-w-md mx-auto w-full">
+        <div className="relative h-[350px] md:h-[720px] rounded-3xl overflow-hidden shadow-xl">
+          <Image
+            src={t.image}
+            alt={t.name}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* Badge */}
+        <div className="absolute bottom-4 left-4 right-4">
+          <div className="flex items-center gap-4 bg-white/30 backdrop-blur-md border border-white/40 rounded-2xl px-4 py-3 shadow-lg">
+            <div className="flex -space-x-3">
+              <img src="/testimonials/Nutrition.png" className="w-9 h-9 rounded-full" />
+              <img src="/testimonials/chef.png" className="w-9 h-9 rounded-full" />
+              <img src="/testimonials/Ellipse 757.png" className="w-9 h-9 rounded-full" />
+            </div>
+            <p className="text-sm font-medium text-white">
+              Trusted by <span className="font-bold">3,000+</span> Happy Egg Lovers
+            </p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  </AnimatePresence>
+</section>
+
   );
 }

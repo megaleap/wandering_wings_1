@@ -48,12 +48,12 @@ export default function WanderingBlogs() {
             </h2> */}
           </div>
 
-          <button className="group  self-start md:self-auto bg-yellow-400 text-[#3A2417] font-semibold px-6 py-3 rounded-xl flex items-center gap-2 transition hover:bg-white cursor-pointer">
+          {/* <button className="group  self-start md:self-auto bg-yellow-400 text-[#3A2417] font-semibold px-6 py-3 rounded-xl flex items-center gap-2 transition hover:bg-white cursor-pointer">
             View All Blogs
             <span className="w-7 h-7 rounded bg-white flex items-center justify-center group-hover:bg-yellow-400">
               <ArrowRight size={16} className="text-black" />
             </span>
-          </button>
+          </button> */}
         </div>
 
         {/* Blog Cards */}

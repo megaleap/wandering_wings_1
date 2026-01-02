@@ -9,13 +9,14 @@ import WanderingBlogs from '@/components/WanderingBlogs'
 import WanderingKitchen from '@/components/WanderingKitchen'
 
 // import AboutFarm from './about/page'
-import AboutFarm from  "../app/about/page";
+// import AboutFarm from  "../app/about/page";
 import OurEggs from '@/components/OurEggs'
 import Whychooseoureggs from '@/components/Whychooseoureggs'
 import OurBenefits from '@/components/Ourbenifits'
 import { Egg } from 'lucide-react'
 import EggPacks from '@/components/EggPacks'
 import WhyChoose from '@/components/WhyChoose'
+import AboutFarm from '@/components/AboutFarm'
 
 const page = () => {
   return (

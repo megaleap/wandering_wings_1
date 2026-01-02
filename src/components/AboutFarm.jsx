@@ -92,39 +92,92 @@ export default function AboutFarm() {
 
             {/* Mission */}
             <div
-              className={`space-y-4 ${
-                isVisible ? "animate-slide-up delay-2" : "opacity-0"
-              }`}
-            >
-              <h3 className="text-xl md:text-2xl font-bold text-[#39251A]">
-                Our Mission
-              </h3>
+  className={`space-y-6 ${
+    isVisible ? "animate-slide-up delay-2" : "opacity-0"
+  }`}
+>
+  <h3 className="text-xl md:text-2xl font-bold text-[#39251A]">
+    Our Mission
+  </h3>
 
-              {[
-                "Give hens the freedom they deserve in a calm, open environment.",
-                "Offer clean, antibiotic-free eggs families can trust.",
-                "Farm responsibly and sustainably.",
-              ].map((text, index) => (
-                <div key={index} className="flex gap-3">
-                  <div className="w-6 h-6 bg-yellow-400 rounded flex items-center justify-center mt-1">
-                    <svg
-                      className="w-4 h-4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M6 12L10 16L18 8"
-                        stroke="white"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-[#39251A]">{text}</p>
-                </div>
-              ))}
-            </div>
+  <div className="space-y-5">
+    {/* Item 1 */}
+    <div className="flex gap-4">
+      <div className="w-6 h-6 bg-yellow-400 rounded flex items-center justify-center mt-1 shrink-0">
+        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M6 12L10 16L18 8"
+            stroke="white"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      <div>
+        <h4 className="text-lg font-semibold text-[#39251A]">
+          Animal-First Farming
+        </h4>
+        <p className="text-[#39251A] mt-1">
+          We raise chickens in truly free-range, cage-free environments that
+          respect natural behavior, health, and dignity.
+        </p>
+      </div>
+    </div>
+
+    {/* Item 2 */}
+    <div className="flex gap-4">
+      <div className="w-6 h-6 bg-yellow-400 rounded flex items-center justify-center mt-1 shrink-0">
+        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M6 12L10 16L18 8"
+            stroke="white"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      <div>
+        <h4 className="text-lg font-semibold text-[#39251A]">
+          Planet-Positive Practices
+        </h4>
+        <p className="text-[#39251A] mt-1">
+          We follow sustainable farming methods that protect soil, conserve
+          resources, and work in harmony with nature for the long term.
+        </p>
+      </div>
+    </div>
+
+    {/* Item 3 */}
+    <div className="flex gap-4">
+      <div className="w-6 h-6 bg-yellow-400 rounded flex items-center justify-center mt-1 shrink-0">
+        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M6 12L10 16L18 8"
+            stroke="white"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      <div>
+        <h4 className="text-lg font-semibold text-[#39251A]">
+          Food You Can Trust
+        </h4>
+        <p className="text-[#39251A] mt-1">
+          We deliver clean, honest eggs produced with integrity—traceable,
+          responsible, and rooted in nature.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
             <hr className="border-gray-300" />
 

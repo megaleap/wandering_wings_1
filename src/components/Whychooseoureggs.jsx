@@ -8,38 +8,38 @@ import Image from 'next/image'
 const items = [
   {
     type: 'wandering',
-    title: 'Deep Golden Yolks',
-    text: 'From sunlight, greens & herbal-rich feed — no artificial pigments.',
+    title: 'How the hens lives',
+    text: 'Birds live with space, sunlight, and freedom to move-lower stress, healthier life.',
     icon: '/oureggs/yellowegg.png',
   },
   {
     type: 'wandering',
-    title: 'Clean, Neutral Aroma',
-    text: 'No “fishy smell” because hens eat natural, chemical-free diets.',
+    title: 'What goes into the egg',
+    text: 'Natural diet + movement = stronger shells, firmer whites, naturally deep yolks.',
     icon: '/oureggs/Clean, Neutral Aroma.png',
   },
   {
     type: 'wandering',
-    title: 'Higher Nutrition Levels',
-    text: 'Naturally richer in Vitamin D, Omega-3s, antioxidants & protein.',
+    title: 'What your choice supports',
+    text: 'Ethical farming, soil-friendly practices, and long-term sustainability.',
     icon: '/oureggs/High Nutrition Levels.png',
   },
   {
     type: 'regular',
-    title: 'Pale or Artificially Darkened Yolks',
-    text: 'Colour often enhanced with synthetic additives.',
+    title: 'How the hens lives',
+    text: 'Birds live in tight confinement with high stress and restricted movement.',
     icon: '/oureggs/yellowegg.png',
   },
   {
     type: 'regular',
-    title: 'Fishy or Unpleasant Smell',
-    text: 'Caused by poor-quality feed.',
+    title: 'What goes into the egg',
+    text: 'Uniform feed, limited movement = paler yolks and thinner shell quality.',
     icon: '/oureggs/Clean, Neutral Aroma.png',
   },
   {
     type: 'regular',
-    title: 'Lower Nutrient Density',
-    text: 'Factory hens get less sunlight & limited motion.',
+    title: 'What your choice supports',
+    text: 'Industrial production focused on volume, not welfare or ecology.',
     icon: '/oureggs/High Nutrition Levels.png',
   },
 ]
@@ -103,7 +103,7 @@ const Whychooseoureggs = () => {
           {items.filter(i => i.type === 'wandering').map((item, i) => (
             <motion.div
               key={i}
-              className="flex gap-4 mb-16"
+              className="flex gap-4 mb-18"
               variants={slideUp}
               initial="hidden"
               whileInView="visible"
@@ -146,7 +146,7 @@ const Whychooseoureggs = () => {
           {items.filter(i => i.type === 'regular').map((item, i) => (
             <motion.div
               key={i}
-              className="flex gap-4 mb-16"
+              className="flex gap-4 mb-24"
               variants={slideUp}
               initial="hidden"
               whileInView="visible"

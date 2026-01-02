@@ -124,7 +124,7 @@ const page = () => {
               </p>
 
               <p>
-                Thus, from a <strong>C-Codet-Corps student</strong>, Rahul began
+                Thus, from a <strong>SEA CADET CORPS student</strong>, Rahul began
                 evolving into a visionary founder, driven by purpose rather than
                 convenience.
               </p>
