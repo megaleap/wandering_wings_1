@@ -78,7 +78,7 @@ export default function Testimonials() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
-    }, 25000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -90,28 +90,28 @@ export default function Testimonials() {
 
   const t = testimonials[index];
 
-  const slideVariants = {
-    initial: {
-      x: "100%",
-      opacity: 0,
+const slideSameDirection = {
+  initial: {
+    x: "80px",
+    opacity: 0,
+  },
+  animate: {
+    x: "0px",
+    opacity: 1,
+    transition: {
+      duration: 0.35,
+      ease: [0.22, 1, 0.36, 1],
     },
-    animate: {
-      x: "0%",
-      opacity: 1,
-      transition: {
-        duration: 1.6,
-        ease: [0.22, 1, 0.36, 1],
-      },
+  },
+  exit: {
+    x: "-80px",
+    opacity: 0,
+    transition: {
+      duration: 0.35,
+      ease: [0.22, 1, 0.36, 1],
     },
-    exit: {
-      x: "-100%",
-      opacity: 0,
-      transition: {
-        duration: 1.6,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
+  },
+};
 
   return (
 <section
@@ -120,14 +120,17 @@ export default function Testimonials() {
 >
   <div className="absolute inset-0 bg-[#2b1d12]/85"></div>
 
-  <AnimatePresence mode="wait">
+ <AnimatePresence mode="wait">
+  <div
+    key={index}
+    className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
+  >
+    {/* LEFT CONTENT */}
     <motion.div
-      key={index}
-      variants={slideVariants}
+      variants={slideSameDirection}
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
     >
       {/* LEFT CONTENT */}
       <div className="overflow-hidden">
@@ -207,8 +210,15 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
+      </motion.div>
 
       {/* RIGHT IMAGE */}
+       <motion.div
+      variants={slideSameDirection}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <div className="relative max-w-md mx-auto w-full">
         <div className="relative h-[350px] md:h-[720px] rounded-3xl overflow-hidden shadow-xl">
           <Image
@@ -234,7 +244,9 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
+      
     </motion.div>
+    </div>
   </AnimatePresence>
 </section>
 
